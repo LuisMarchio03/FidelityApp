@@ -87,3 +87,9 @@
 
 - [] The user must not be able to delete a company with users registered.
 
+
+### Nome do projeto: ACIM Backend
+
+### Autor: LuisMarchio03
+
+### Github do autor: https://github.com/LuisMarchio03/
