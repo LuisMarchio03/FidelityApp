@@ -17,3 +17,5 @@
 
 db/
 .vercel
+
+tmp

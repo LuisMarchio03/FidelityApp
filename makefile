@@ -1,17 +1,18 @@
 .PHONY: default run build test docs clean
 # Variables
 APP_NAME=acim-backend
+MAIN_FILE=main.go
 
 # Tasks
 default: run-with-docs
 
 run:
-	@go run main.go
+	@air
 run-with-docs:
 	@swag init
-	@go run main.go
+	@air
 build:
-	@go build -o $(APP_NAME) main.go
+	@go build -o $(APP_NAME) $(MAIN_FILE)
 test:
 	@go test ./...
 docs:
@@ -19,3 +20,6 @@ docs:
 clean:
 	@rm -f (APP_NAME)
 	@rm -f ./docs
+setup:
+	@go mod download
+	@go get github.com/cosmtrek/air
