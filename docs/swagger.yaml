@@ -1,0 +1,96 @@
+definitions:
+  handler.ErrorResponse:
+    properties:
+      errorCode:
+        type: string
+      message:
+        type: string
+    type: object
+  handler.ListCompaniesResponse:
+    properties:
+      data:
+        $ref: '#/definitions/schemas.CompanyResponse'
+      message:
+        type: string
+    type: object
+  schemas.CompanyResponse:
+    properties:
+      address:
+        type: string
+      addressCity:
+        type: string
+      addressComplement:
+        type: string
+      addressNumber:
+        type: string
+      addressState:
+        type: string
+      addressZipCode:
+        type: string
+      cnpj:
+        type: string
+      createdAt:
+        type: string
+      deletedAt:
+        type: string
+      id:
+        type: integer
+      name:
+        type: string
+      updatedAt:
+        type: string
+      users:
+        items:
+          $ref: '#/definitions/schemas.UserResponse'
+        type: array
+    type: object
+  schemas.UserResponse:
+    properties:
+      address:
+        type: string
+      companyId:
+        type: integer
+      createdAt:
+        type: string
+      deletedAt:
+        type: string
+      email:
+        type: string
+      id:
+        type: integer
+      name:
+        type: string
+      password:
+        type: string
+      phone:
+        type: string
+      type:
+        type: string
+      updatedAt:
+        type: string
+    type: object
+info:
+  contact: {}
+paths:
+  /companies:
+    get:
+      consumes:
+      - application/json
+      description: List all Companies
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/handler.ListCompaniesResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/handler.ErrorResponse'
+        "404":
+          description: Not Found
+          schema:
+            $ref: '#/definitions/handler.ErrorResponse'
+      summary: List Companies
+      tags:
+      - Opening
+swagger: "2.0"
