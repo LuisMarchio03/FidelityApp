@@ -29,6 +29,9 @@ func InitializeRoutes(r *gin.Engine) {
 		v1.GET("/company", func(ctx *gin.Context) {
 			handler.ShowCompanyHandler(ctx)
 		})
+		v1.PUT("/company", func(ctx *gin.Context) {
+			handler.UpdateCompanyHandler(ctx)
+		})
 	}
 
 	// Intialize Swagger

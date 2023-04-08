@@ -48,3 +48,8 @@ type ShowCompanyResponse struct {
 	Message string                  `json:"message"`
 	Data    schemas.CompanyResponse `json:"data"`
 }
+
+type UpdateCompanyResponse struct {
+	Message string                  `json:"message"`
+	Data    schemas.CompanyResponse `json:"data"`
+}

@@ -43,3 +43,25 @@ func (r *CreateCompanyRequest) Validate() error {
 	}
 	return nil
 }
+
+// UpdateCompany
+
+type UpdateCompanyRequest struct {
+	Name              string `json:"name"`
+	CNPJ              string `json:"cnpj"`
+	Address           string `json:"address"`
+	AddressNumber     string `json:"addressNumber"`
+	AddressComplement string `json:"addressComplement"`
+	AddressCity       string `json:"addressCity"`
+	AddressState      string `json:"addressState"`
+	AddressZipCode    string `json:"addressZipCode"`
+}
+
+func (r *UpdateCompanyRequest) Validate() error {
+	// if any field is provider, validation is truthy
+	if r.Name != "" && r.CNPJ != "" && r.Address != "" && r.AddressNumber != "" && r.AddressCity != "" && r.AddressState != "" && r.AddressZipCode != "" {
+		return nil
+	}
+	// If none of the fields were provided, return false
+	return fmt.Errorf("at least one valid field must be provided")
+}

@@ -82,6 +82,60 @@ const docTemplate = `{
                     }
                 }
             },
+            "put": {
+                "description": "Update a new company",
+                "consumes": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Company"
+                ],
+                "summary": "Update Company",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "Company identification",
+                        "name": "id",
+                        "in": "query",
+                        "required": true
+                    },
+                    {
+                        "description": "Request body",
+                        "name": "request",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/handler.UpdateCompanyRequest"
+                        }
+                    }
+                ],
+                "responses": {
+                    "201": {
+                        "description": "Created",
+                        "schema": {
+                            "$ref": "#/definitions/handler.UpdateCompanyResponse"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/handler.ErrorResponse"
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found",
+                        "schema": {
+                            "$ref": "#/definitions/handler.ErrorResponse"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "schema": {
+                            "$ref": "#/definitions/handler.ErrorResponse"
+                        }
+                    }
+                }
+            },
             "post": {
                 "description": "Create a new company",
                 "consumes": [
@@ -242,6 +296,46 @@ const docTemplate = `{
             }
         },
         "handler.ShowCompanyResponse": {
+            "type": "object",
+            "properties": {
+                "data": {
+                    "$ref": "#/definitions/schemas.CompanyResponse"
+                },
+                "message": {
+                    "type": "string"
+                }
+            }
+        },
+        "handler.UpdateCompanyRequest": {
+            "type": "object",
+            "properties": {
+                "address": {
+                    "type": "string"
+                },
+                "addressCity": {
+                    "type": "string"
+                },
+                "addressComplement": {
+                    "type": "string"
+                },
+                "addressNumber": {
+                    "type": "string"
+                },
+                "addressState": {
+                    "type": "string"
+                },
+                "addressZipCode": {
+                    "type": "string"
+                },
+                "cnpj": {
+                    "type": "string"
+                },
+                "name": {
+                    "type": "string"
+                }
+            }
+        },
+        "handler.UpdateCompanyResponse": {
             "type": "object",
             "properties": {
                 "data": {
