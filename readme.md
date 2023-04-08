@@ -39,7 +39,7 @@
 - [] Show User
 - [] Update Company
 - [] Update User
-- [] Delete Company
+- [x] Delete Company
 - [] Delete User
 - [] Login
 - [] Logout

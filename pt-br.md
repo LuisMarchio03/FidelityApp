@@ -37,7 +37,7 @@
 - [] Mostrar usuário
 - [] Atualizar empresa
 - [] Atualizar usuário
-- [] Excluir empresa
+- [x] Excluir empresa
 - [] Excluir usuário
 - [] Login
 - [] Logout
