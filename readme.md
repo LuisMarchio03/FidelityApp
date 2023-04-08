@@ -1,4 +1,4 @@
-# ACIM Backend
+# ACIM FidelityApp
 
 ![Logo](./.github/acim-backend.png) 
 
