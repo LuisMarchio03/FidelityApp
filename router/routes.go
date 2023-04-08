@@ -2,7 +2,8 @@ package router
 
 import (
 	docs "github.com/LuisMarchio03/acim-backend/docs"
-	"github.com/LuisMarchio03/acim-backend/handler"
+	companyHandler "github.com/LuisMarchio03/acim-backend/handler/company"
+	userHandler "github.com/LuisMarchio03/acim-backend/handler/user"
 	"github.com/gin-gonic/gin"
 	swaggerfiles "github.com/swaggo/files"
 	ginSwagger "github.com/swaggo/gin-swagger"
@@ -10,7 +11,8 @@ import (
 
 func InitializeRoutes(r *gin.Engine) {
 	// Initialize the handlers
-	handler.InitializeHandler()
+	companyHandler.InitializeHandler()
+	userHandler.InitializeHandler()
 	basePath := "/api/v1"
 	docs.SwaggerInfo.BasePath = basePath
 
@@ -18,19 +20,34 @@ func InitializeRoutes(r *gin.Engine) {
 	v1 := r.Group("/api/v1")
 	{
 		v1.POST("/company", func(ctx *gin.Context) {
-			handler.CreateCompanyHandler(ctx)
+			companyHandler.CreateCompanyHandler(ctx)
 		})
 		v1.GET("/companies", func(ctx *gin.Context) {
-			handler.ListCompaniesHandler(ctx)
+			companyHandler.ListCompaniesHandler(ctx)
 		})
 		v1.DELETE("/company", func(ctx *gin.Context) {
-			handler.DeleteCompanyHandler(ctx)
+			companyHandler.DeleteCompanyHandler(ctx)
 		})
 		v1.GET("/company", func(ctx *gin.Context) {
-			handler.ShowCompanyHandler(ctx)
+			companyHandler.ShowCompanyHandler(ctx)
 		})
 		v1.PUT("/company", func(ctx *gin.Context) {
-			handler.UpdateCompanyHandler(ctx)
+			companyHandler.UpdateCompanyHandler(ctx)
+		})
+		v1.POST("/user", func(ctx *gin.Context) {
+			userHandler.CreateUserHandler(ctx)
+		})
+		v1.GET("/users", func(ctx *gin.Context) {
+			userHandler.ListUsersHandler(ctx)
+		})
+		v1.DELETE("/user", func(ctx *gin.Context) {
+			userHandler.DeleteUserHandler(ctx)
+		})
+		v1.GET("/user", func(ctx *gin.Context) {
+			userHandler.ShowUserHandler(ctx)
+		})
+		v1.PUT("/user", func(ctx *gin.Context) {
+			userHandler.UpdateUserHandler(ctx)
 		})
 	}
 
