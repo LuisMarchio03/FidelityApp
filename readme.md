@@ -1,3 +1,5 @@
+# ACIM Backend
+
 # Schemas
 
 ## Company
@@ -24,7 +26,7 @@
 
 # Features
 
-- [] Create Company
+- [x] Create Company
 - [] Create User
 - [x] List Companies
 - [] List Users
@@ -88,8 +90,17 @@
 - [] The user must not be able to delete a company with users registered.
 
 
-### Nome do projeto: ACIM Backend
 
-### Autor: LuisMarchio03
+## Author
 
-### Github do autor: https://github.com/LuisMarchio03/
+- **Luis Marchio** - [LuisMarchio03](https://www.linkedin.com/in/luís-gabriel-marchió-batista-a0aa64206/)
+
+
+## Contact
+
+- **Email**: luisgabrielmarchio75@gmail.com
+- **Linkedin**: https://www.linkedin.com/in/luís-gabriel-marchió-batista-a0aa64206/
+- **Github**: https://github.com/LuisMarchio03/
+- **Instagram**: https://www.instagram.com/luismarchio03.dev/
+- **Discord**: Luís Gabriel Marchió#0305
+- **Whatsapp**: +55 64 99991-8525
