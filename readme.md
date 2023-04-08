@@ -93,7 +93,7 @@
 
 ## Author
 
-- **Luis Marchio** - [LuisMarchio03](https://www.linkedin.com/in/luís-gabriel-marchió-batista-a0aa64206/)
+- **Luis Gabriel Marchió Batista** - [Luis_Marchio03](https://www.linkedin.com/in/luís-gabriel-marchió-batista-a0aa64206/)
 
 
 ## Contact
