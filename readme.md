@@ -1,5 +1,7 @@
 # ACIM Backend
 
+![Logo](./.github/acim-backend.png) 
+
 # Schemas
 
 ## Company
