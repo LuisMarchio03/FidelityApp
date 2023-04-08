@@ -49,6 +49,39 @@ const docTemplate = `{
             }
         },
         "/company": {
+            "get": {
+                "description": "Show a company",
+                "consumes": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Company"
+                ],
+                "summary": "Show Company",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "Company identification",
+                        "name": "id",
+                        "in": "query",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/handler.ShowCompanyResponse"
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found",
+                        "schema": {
+                            "$ref": "#/definitions/handler.ErrorResponse"
+                        }
+                    }
+                }
+            },
             "post": {
                 "description": "Create a new company",
                 "consumes": [
@@ -195,6 +228,20 @@ const docTemplate = `{
             }
         },
         "handler.ListCompaniesResponse": {
+            "type": "object",
+            "properties": {
+                "data": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/schemas.CompanyResponse"
+                    }
+                },
+                "message": {
+                    "type": "string"
+                }
+            }
+        },
+        "handler.ShowCompanyResponse": {
             "type": "object",
             "properties": {
                 "data": {

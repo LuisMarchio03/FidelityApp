@@ -35,11 +35,16 @@ type CreateCompanyResponse struct {
 }
 
 type ListCompaniesResponse struct {
+	Message string                    `json:"message"`
+	Data    []schemas.CompanyResponse `json:"data"`
+}
+
+type DeleteCompanyResponse struct {
 	Message string                  `json:"message"`
 	Data    schemas.CompanyResponse `json:"data"`
 }
 
-type DeleteCompanyResponse struct {
+type ShowCompanyResponse struct {
 	Message string                  `json:"message"`
 	Data    schemas.CompanyResponse `json:"data"`
 }

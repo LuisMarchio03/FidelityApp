@@ -42,6 +42,15 @@ definitions:
   handler.ListCompaniesResponse:
     properties:
       data:
+        items:
+          $ref: '#/definitions/schemas.CompanyResponse'
+        type: array
+      message:
+        type: string
+    type: object
+  handler.ShowCompanyResponse:
+    properties:
+      data:
         $ref: '#/definitions/schemas.CompanyResponse'
       message:
         type: string
@@ -151,6 +160,28 @@ paths:
           schema:
             $ref: '#/definitions/handler.ErrorResponse'
       summary: Delete Company
+      tags:
+      - Company
+    get:
+      consumes:
+      - application/json
+      description: Show a company
+      parameters:
+      - description: Company identification
+        in: query
+        name: id
+        required: true
+        type: string
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/handler.ShowCompanyResponse'
+        "404":
+          description: Not Found
+          schema:
+            $ref: '#/definitions/handler.ErrorResponse'
+      summary: Show Company
       tags:
       - Company
     post:
