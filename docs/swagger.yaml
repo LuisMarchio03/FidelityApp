@@ -1,4 +1,18 @@
 definitions:
+  github_com_LuisMarchio03_acim-backend_handler_company.ErrorResponse:
+    properties:
+      errorCode:
+        type: string
+      message:
+        type: string
+    type: object
+  github_com_LuisMarchio03_acim-backend_handler_user.ErrorResponse:
+    properties:
+      errorCode:
+        type: string
+      message:
+        type: string
+    type: object
   handler.CreateCompanyRequest:
     properties:
       address:
@@ -25,6 +39,30 @@ definitions:
       message:
         type: string
     type: object
+  handler.CreateUserRequest:
+    properties:
+      address:
+        type: string
+      companyId:
+        type: integer
+      email:
+        type: string
+      name:
+        type: string
+      password:
+        type: string
+      phone:
+        type: string
+      type:
+        type: string
+    type: object
+  handler.CreateUserResponse:
+    properties:
+      data:
+        $ref: '#/definitions/schemas.UserResponse'
+      message:
+        type: string
+    type: object
   handler.DeleteCompanyResponse:
     properties:
       data:
@@ -32,10 +70,10 @@ definitions:
       message:
         type: string
     type: object
-  handler.ErrorResponse:
+  handler.DeleteUserResponse:
     properties:
-      errorCode:
-        type: string
+      data:
+        $ref: '#/definitions/schemas.UserResponse'
       message:
         type: string
     type: object
@@ -48,10 +86,26 @@ definitions:
       message:
         type: string
     type: object
+  handler.ListUsersResponse:
+    properties:
+      data:
+        items:
+          $ref: '#/definitions/schemas.UserResponse'
+        type: array
+      message:
+        type: string
+    type: object
   handler.ShowCompanyResponse:
     properties:
       data:
         $ref: '#/definitions/schemas.CompanyResponse'
+      message:
+        type: string
+    type: object
+  handler.ShowUserResponse:
+    properties:
+      data:
+        $ref: '#/definitions/schemas.UserResponse'
       message:
         type: string
     type: object
@@ -78,6 +132,30 @@ definitions:
     properties:
       data:
         $ref: '#/definitions/schemas.CompanyResponse'
+      message:
+        type: string
+    type: object
+  handler.UpdateUserRequest:
+    properties:
+      address:
+        type: string
+      companyId:
+        type: integer
+      email:
+        type: string
+      name:
+        type: string
+      password:
+        type: string
+      phone:
+        type: string
+      type:
+        type: string
+    type: object
+  handler.UpdateUserResponse:
+    properties:
+      data:
+        $ref: '#/definitions/schemas.UserResponse'
       message:
         type: string
     type: object
@@ -153,11 +231,11 @@ paths:
         "400":
           description: Bad Request
           schema:
-            $ref: '#/definitions/handler.ErrorResponse'
+            $ref: '#/definitions/github_com_LuisMarchio03_acim-backend_handler_company.ErrorResponse'
         "404":
           description: Not Found
           schema:
-            $ref: '#/definitions/handler.ErrorResponse'
+            $ref: '#/definitions/github_com_LuisMarchio03_acim-backend_handler_company.ErrorResponse'
       summary: List Companies
       tags:
       - Company
@@ -180,11 +258,11 @@ paths:
         "400":
           description: Bad Request
           schema:
-            $ref: '#/definitions/handler.ErrorResponse'
+            $ref: '#/definitions/github_com_LuisMarchio03_acim-backend_handler_company.ErrorResponse'
         "404":
           description: Not Found
           schema:
-            $ref: '#/definitions/handler.ErrorResponse'
+            $ref: '#/definitions/github_com_LuisMarchio03_acim-backend_handler_company.ErrorResponse'
       summary: Delete Company
       tags:
       - Company
@@ -206,7 +284,7 @@ paths:
         "404":
           description: Not Found
           schema:
-            $ref: '#/definitions/handler.ErrorResponse'
+            $ref: '#/definitions/github_com_LuisMarchio03_acim-backend_handler_company.ErrorResponse'
       summary: Show Company
       tags:
       - Company
@@ -229,11 +307,11 @@ paths:
         "400":
           description: Bad Request
           schema:
-            $ref: '#/definitions/handler.ErrorResponse'
+            $ref: '#/definitions/github_com_LuisMarchio03_acim-backend_handler_company.ErrorResponse'
         "500":
           description: Internal Server Error
           schema:
-            $ref: '#/definitions/handler.ErrorResponse'
+            $ref: '#/definitions/github_com_LuisMarchio03_acim-backend_handler_company.ErrorResponse'
       summary: Create Company
       tags:
       - Company
@@ -261,16 +339,149 @@ paths:
         "400":
           description: Bad Request
           schema:
-            $ref: '#/definitions/handler.ErrorResponse'
+            $ref: '#/definitions/github_com_LuisMarchio03_acim-backend_handler_company.ErrorResponse'
         "404":
           description: Not Found
           schema:
-            $ref: '#/definitions/handler.ErrorResponse'
+            $ref: '#/definitions/github_com_LuisMarchio03_acim-backend_handler_company.ErrorResponse'
         "500":
           description: Internal Server Error
           schema:
-            $ref: '#/definitions/handler.ErrorResponse'
+            $ref: '#/definitions/github_com_LuisMarchio03_acim-backend_handler_company.ErrorResponse'
       summary: Update Company
       tags:
       - Company
+  /user:
+    delete:
+      consumes:
+      - application/json
+      description: Delete a user
+      parameters:
+      - description: User identification
+        in: query
+        name: id
+        required: true
+        type: string
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/handler.DeleteUserResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/github_com_LuisMarchio03_acim-backend_handler_user.ErrorResponse'
+        "404":
+          description: Not Found
+          schema:
+            $ref: '#/definitions/github_com_LuisMarchio03_acim-backend_handler_user.ErrorResponse'
+      summary: Delete User
+      tags:
+      - User
+    get:
+      consumes:
+      - application/json
+      description: Show a user
+      parameters:
+      - description: User identification
+        in: query
+        name: id
+        required: true
+        type: string
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/handler.ShowUserResponse'
+        "404":
+          description: Not Found
+          schema:
+            $ref: '#/definitions/github_com_LuisMarchio03_acim-backend_handler_user.ErrorResponse'
+      summary: Show User
+      tags:
+      - User
+    post:
+      consumes:
+      - application/json
+      description: Create a new user
+      parameters:
+      - description: Request body
+        in: body
+        name: request
+        required: true
+        schema:
+          $ref: '#/definitions/handler.CreateUserRequest'
+      responses:
+        "201":
+          description: Created
+          schema:
+            $ref: '#/definitions/handler.CreateUserResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/github_com_LuisMarchio03_acim-backend_handler_user.ErrorResponse'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/github_com_LuisMarchio03_acim-backend_handler_user.ErrorResponse'
+      summary: Create User
+      tags:
+      - User
+    put:
+      consumes:
+      - application/json
+      description: Update a new user
+      parameters:
+      - description: User identification
+        in: query
+        name: id
+        required: true
+        type: string
+      - description: Request body
+        in: body
+        name: request
+        required: true
+        schema:
+          $ref: '#/definitions/handler.UpdateUserRequest'
+      responses:
+        "201":
+          description: Created
+          schema:
+            $ref: '#/definitions/handler.UpdateUserResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/github_com_LuisMarchio03_acim-backend_handler_user.ErrorResponse'
+        "404":
+          description: Not Found
+          schema:
+            $ref: '#/definitions/github_com_LuisMarchio03_acim-backend_handler_user.ErrorResponse'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/github_com_LuisMarchio03_acim-backend_handler_user.ErrorResponse'
+      summary: Update User
+      tags:
+      - User
+  /users:
+    get:
+      consumes:
+      - application/json
+      description: List all Users
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/handler.ListUsersResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/github_com_LuisMarchio03_acim-backend_handler_user.ErrorResponse'
+        "404":
+          description: Not Found
+          schema:
+            $ref: '#/definitions/github_com_LuisMarchio03_acim-backend_handler_user.ErrorResponse'
+      summary: List Users
+      tags:
+      - User
 swagger: "2.0"
