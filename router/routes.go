@@ -23,6 +23,9 @@ func InitializeRoutes(r *gin.Engine) {
 		v1.GET("/companies", func(ctx *gin.Context) {
 			handler.ListCompaniesHandler(ctx)
 		})
+		v1.DELETE("company", func(ctx *gin.Context) {
+			handler.DeleteCompanyHandler(ctx)
+		})
 	}
 
 	// Intialize Swagger

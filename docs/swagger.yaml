@@ -25,6 +25,13 @@ definitions:
       message:
         type: string
     type: object
+  handler.DeleteCompanyResponse:
+    properties:
+      data:
+        $ref: '#/definitions/schemas.CompanyResponse'
+      message:
+        type: string
+    type: object
   handler.ErrorResponse:
     properties:
       errorCode:
@@ -120,6 +127,32 @@ paths:
       tags:
       - Company
   /company:
+    delete:
+      consumes:
+      - application/json
+      description: Delete a company
+      parameters:
+      - description: Company identification
+        in: query
+        name: id
+        required: true
+        type: string
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/handler.DeleteCompanyResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/handler.ErrorResponse'
+        "404":
+          description: Not Found
+          schema:
+            $ref: '#/definitions/handler.ErrorResponse'
+      summary: Delete Company
+      tags:
+      - Company
     post:
       consumes:
       - application/json
