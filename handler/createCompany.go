@@ -42,7 +42,7 @@ func CreateCompanyHandler(ctx *gin.Context) {
 
 	if err := db.Create(&company).Error; err != nil {
 		logger.Errorf("error creating company: %v", err.Error())
-		sendError(ctx, http.StatusInternalServerError, "error creating opening on database")
+		sendError(ctx, http.StatusInternalServerError, "error creating company on database")
 		return
 	}
 
