@@ -23,7 +23,7 @@ const docTemplate = `{
                     "application/json"
                 ],
                 "tags": [
-                    "Opening"
+                    "Company"
                 ],
                 "summary": "List Companies",
                 "responses": {

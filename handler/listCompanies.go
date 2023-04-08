@@ -11,7 +11,7 @@ import (
 
 // @Summary List Companies
 // @Description List all Companies
-// @Tags Opening
+// @Tags Company
 // @Accept json
 // @Producer json
 // @Success 200 {object} ListCompaniesResponse

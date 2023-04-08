@@ -118,7 +118,7 @@ paths:
             $ref: '#/definitions/handler.ErrorResponse'
       summary: List Companies
       tags:
-      - Opening
+      - Company
   /company:
     post:
       consumes:
