@@ -1,15 +1,6 @@
 # ACIM Fidelity App
 
-<div
-  style="
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-  "
->
-<img src="./.github/acim-backend.png" alt="Logo" width="200" height="200" />
-</div>
+![Logo](./.github/acim-backend.png)
 
 # Schemas
 
