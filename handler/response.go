@@ -29,6 +29,11 @@ type ErrorResponse struct {
 	ErrorCode string `json:"errorCode"`
 }
 
+type CreateCompanyResponse struct {
+	Message string                  `json:"message"`
+	Data    schemas.CompanyResponse `json:"data"`
+}
+
 type ListCompaniesResponse struct {
 	Message string                  `json:"message"`
 	Data    schemas.CompanyResponse `json:"data"`

@@ -17,6 +17,9 @@ func InitializeRoutes(r *gin.Engine) {
 	// Initialize the routes
 	v1 := r.Group("/api/v1")
 	{
+		v1.POST("/company", func(ctx *gin.Context) {
+			handler.CreateCompanyHandler(ctx)
+		})
 		v1.GET("/companies", func(ctx *gin.Context) {
 			handler.ListCompaniesHandler(ctx)
 		})

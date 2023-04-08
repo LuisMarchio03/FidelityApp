@@ -1,4 +1,30 @@
 definitions:
+  handler.CreateCompanyRequest:
+    properties:
+      address:
+        type: string
+      addressCity:
+        type: string
+      addressComplement:
+        type: string
+      addressNumber:
+        type: string
+      addressState:
+        type: string
+      addressZipCode:
+        type: string
+      cnpj:
+        type: string
+      name:
+        type: string
+    type: object
+  handler.CreateCompanyResponse:
+    properties:
+      data:
+        $ref: '#/definitions/schemas.CompanyResponse'
+      message:
+        type: string
+    type: object
   handler.ErrorResponse:
     properties:
       errorCode:
@@ -93,4 +119,32 @@ paths:
       summary: List Companies
       tags:
       - Opening
+  /company:
+    post:
+      consumes:
+      - application/json
+      description: Create a new company
+      parameters:
+      - description: Request body
+        in: body
+        name: request
+        required: true
+        schema:
+          $ref: '#/definitions/handler.CreateCompanyRequest'
+      responses:
+        "201":
+          description: Created
+          schema:
+            $ref: '#/definitions/handler.CreateCompanyResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/handler.ErrorResponse'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/handler.ErrorResponse'
+      summary: Create Company
+      tags:
+      - Company
 swagger: "2.0"
