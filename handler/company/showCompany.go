@@ -39,6 +39,7 @@ func ShowCompanyHandler(ctx *gin.Context) {
 
 	if err := db.Find(&users).Error; err != nil {
 		sendError(ctx, http.StatusInternalServerError, "error listing users")
+		return
 	}
 
 	company.Users = users
