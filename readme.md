@@ -31,8 +31,8 @@
 - **UserId**
 - **CompanyId**
 - **TotalPoints**
-- **Point[]**
 - **Finished** 
+- **Point[]**
 
 ## Point
 
@@ -45,22 +45,22 @@
 
 - [x] Create Company
 - [x] Create User
-- [] Create CardFidelity
+- [x] Create CardFidelity
 - [x] List Companies
 - [x] List Users
 - [] List Users by Company
 - [] List Users by Type
 - [] List Users by Company and Type
-- [] List CardFidelity
+- [x] List CardFidelity
 - [x] Show Company
 - [x] Show User
-- [] Show CardFidelity
+- [x] Show CardFidelity
 - [x] Update Company
 - [x] Update User
-- [] Update CardFidelity
+- [x] Update CardFidelity
 - [x] Delete Company
 - [x] Delete User
-- [] Create CardFidelity
+- [x] Delete CardFidelity
 - [] Login
 - [] Logout
 - [] Forgot Password
@@ -73,9 +73,9 @@
 
 ## Schema user
 
-- [] The user must be able to register in the application with name, email, password and type (user / employee).
+- [x] The user must be able to register in the application with name, email, password and type (user / employee).
 
-- [] The user must be able to update name, email and password.
+- [x] The user must be able to update name, email and password.
 
 - [] The user must be able to login with email and password.
 
@@ -95,15 +95,15 @@
 
 ## Schema company
 
-- [] The user must be able to register a company with name, CNPJ, address, address number, address complement, address city, address state and address zip code.
+- [x] The user must be able to register a company with name, CNPJ, address, address number, address complement, address city, address state and address zip code.
 
-- [] The user must be able to update the company data.
+- [x] The user must be able to update the company data.
 
-- [] The user must be able to list the companies.
+- [x] The user must be able to list the companies.
 
-- [] The user must be able to show the company data.
+- [x] The user must be able to show the company data.
 
-- [] The user must be able to delete the company.
+- [x] The user must be able to delete the company.
 
 - [] The user must not be able to register a company with a CNPJ already registered.
 
@@ -113,15 +113,15 @@
 
 # CardFidelity Schema
 
-- [] The user must be able to register a card fidelity with user, company, total points and points.
+- [x] The user must be able to register a card fidelity with user, company, total points and points.
 
-- [] The user must be able to update the card fidelity data.
+- [x] The user must be able to update the card fidelity data.
 
-- [] The user must be able to list the card fidelity.
+- [x] The user must be able to list the card fidelity.
 
-- [] The user must be able to show the card fidelity data.
+- [x] The user must be able to show the card fidelity data.
 
-- [] The user must be able to delete the card fidelity.
+- [x] The user must be able to delete the card fidelity.
 
 - [] The user must not be able to register a card fidelity with a user already registered.
 
@@ -131,15 +131,15 @@
 
 # Point Schema
 
-- [] The user must be able to register a point with card fidelity, point and created at.
+- [x] The user must be able to register a point with card fidelity, point and created at.
 
-- [] The user must be able to update the point data.
+- [x] The user must be able to update the point data.
 
-- [] The user must be able to list the points.
+- [x] The user must be able to list the points.
 
-- [] The user must be able to show the point data.
+- [x] The user must be able to show the point data.
 
-- [] The user must be able to delete the point.
+- [x] The user must be able to delete the point.
 
 - [] The user must not be able to register a point with a card fidelity already registered.
 

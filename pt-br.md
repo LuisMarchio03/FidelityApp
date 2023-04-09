@@ -67,9 +67,9 @@
 
 ## Schema user
 
-- [] O usuário deve ser capaz de se registrar no aplicativo com nome, email, senha e tipo (usuário / funcionário).
+- [x] O usuário deve ser capaz de se registrar no aplicativo com nome, email, senha e tipo (usuário / funcionário).
 
-- [] O usuário deve ser capaz de atualizar nome, email e senha.
+- [x] O usuário deve ser capaz de atualizar nome, email e senha.
 
 - [] O usuário deve ser capaz de fazer login com email e senha.
 
@@ -89,15 +89,15 @@
 
 ## Schema company
 
-- [] O usuário deve ser capaz de registrar uma empresa com nome, CNPJ, endereço, número do endereço, complemento do endereço, cidade do endereço, estado do endereço e código postal do endereço.
+- [x] O usuário deve ser capaz de registrar uma empresa com nome, CNPJ, endereço, número do endereço, complemento do endereço, cidade do endereço, estado do endereço e código postal do endereço.
 
-- [] O usuário deve ser capaz de atualizar os dados da empresa.
+- [x] O usuário deve ser capaz de atualizar os dados da empresa.
 
-- [] O usuário deve ser capaz de listar as empresas.
+- [x] O usuário deve ser capaz de listar as empresas.
 
-- [] O usuário deve ser capaz de mostrar os dados da empresa.
+- [x] O usuário deve ser capaz de mostrar os dados da empresa.
 
-- [] O usuário deve ser capaz de excluir a empresa.
+- [x] O usuário deve ser capaz de excluir a empresa.
 
 - [] O usuário não deve ser capaz de registrar uma empresa com um CNPJ já registrado.
 
@@ -107,15 +107,15 @@
 
 # CardFidelity Schema
 
-- [] O usuário deve ser capaz de registrar um cartão fidelidade com usuário, empresa, pontos totais e pontos.
+- [x] O usuário deve ser capaz de registrar um cartão fidelidade com usuário, empresa, pontos totais e pontos.
 
-- [] O usuário deve ser capaz de atualizar os dados do cartão fidelidade.
+- [x] O usuário deve ser capaz de atualizar os dados do cartão fidelidade.
 
-- [] O usuário deve ser capaz de listar os cartões fidelidade.
+- [x] O usuário deve ser capaz de listar os cartões fidelidade.
 
-- [] O usuário deve ser capaz de mostrar os dados do cartão fidelidade.
+- [x] O usuário deve ser capaz de mostrar os dados do cartão fidelidade.
 
-- [] O usuário deve ser capaz de excluir o cartão fidelidade.
+- [x] O usuário deve ser capaz de excluir o cartão fidelidade.
 
 - [] O usuário não deve ser capaz de registrar um cartão fidelidade com um usuário já registrado.
 
@@ -125,15 +125,15 @@
 
 # Point Schema
 
-- [] O usuário deve ser capaz de registrar um ponto com cartão fidelidade, ponto e criado em.
+- [x] O usuário deve ser capaz de registrar um ponto com cartão fidelidade, ponto e criado em.
 
-- [] O usuário deve ser capaz de atualizar os dados do ponto.
+- [x] O usuário deve ser capaz de atualizar os dados do ponto.
 
-- [] O usuário deve ser capaz de listar os pontos.
+- [x] O usuário deve ser capaz de listar os pontos.
 
-- [] O usuário deve ser capaz de mostrar os dados do ponto.
+- [x] O usuário deve ser capaz de mostrar os dados do ponto.
 
-- [] O usuário deve ser capaz de excluir o ponto.
+- [x] O usuário deve ser capaz de excluir o ponto.
 
 - [] O usuário não deve ser capaz de registrar um ponto com um cartão fidelidade já registrado.
 
