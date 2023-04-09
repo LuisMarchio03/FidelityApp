@@ -2,6 +2,9 @@
 
 ![Logo](./.github/acim-backend.png)
 
+ACIM Fidelity App é um aplicativo que permite o registro de usuários, empresas, cartões de fidelidade e pontos. Os usuários podem se cadastrar, fazer login, atualizar seu perfil e recuperar sua senha. As empresas podem se registrar, atualizar seus dados e listar suas informações. Os cartões de fidelidade podem ser registrados, atualizados, listados e excluídos, juntamente com os pontos associados a eles. O aplicativo foi desenvolvido em GoLang, utilizando o SQLite3 como banco de dados e Docker/Docker Compose para o ambiente de desenvolvimento. O autor do projeto é Luis Gabriel Marchió Batista e ele pode ser contatado por meio de várias plataformas, como e-mail, LinkedIn, Github, Instagram, Discord e WhatsApp.
+
+
 # Esquemas
 
 ## Company
