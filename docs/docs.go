@@ -16,6 +16,207 @@ const docTemplate = `{
     "host": "{{.Host}}",
     "basePath": "{{.BasePath}}",
     "paths": {
+        "/cardFidelities": {
+            "get": {
+                "description": "List all CardFidelities",
+                "consumes": [
+                    "application/json"
+                ],
+                "tags": [
+                    "CardFidelity"
+                ],
+                "summary": "List CardFidelities",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/handler.ListCardFidelitiesResponse"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/github_com_LuisMarchio03_acim-backend_handler_cardFidelity.ErrorResponse"
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found",
+                        "schema": {
+                            "$ref": "#/definitions/github_com_LuisMarchio03_acim-backend_handler_cardFidelity.ErrorResponse"
+                        }
+                    }
+                }
+            }
+        },
+        "/cardFidelity": {
+            "get": {
+                "description": "Show a cardFidelity",
+                "consumes": [
+                    "application/json"
+                ],
+                "tags": [
+                    "CardFidelity"
+                ],
+                "summary": "Show CardFidelity",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "CardFidelity identification",
+                        "name": "id",
+                        "in": "query",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/handler.ShowCardFidelityResponse"
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found",
+                        "schema": {
+                            "$ref": "#/definitions/github_com_LuisMarchio03_acim-backend_handler_cardFidelity.ErrorResponse"
+                        }
+                    }
+                }
+            },
+            "put": {
+                "description": "Update a new cardFidelity",
+                "consumes": [
+                    "application/json"
+                ],
+                "tags": [
+                    "CardFidelity"
+                ],
+                "summary": "Update CardFidelity",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "CardFidelity identification",
+                        "name": "id",
+                        "in": "query",
+                        "required": true
+                    },
+                    {
+                        "description": "Request body",
+                        "name": "request",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/handler.UpdateCardFidelityRequest"
+                        }
+                    }
+                ],
+                "responses": {
+                    "201": {
+                        "description": "Created",
+                        "schema": {
+                            "$ref": "#/definitions/handler.UpdateCardFidelityResponse"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/github_com_LuisMarchio03_acim-backend_handler_cardFidelity.ErrorResponse"
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found",
+                        "schema": {
+                            "$ref": "#/definitions/github_com_LuisMarchio03_acim-backend_handler_cardFidelity.ErrorResponse"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "schema": {
+                            "$ref": "#/definitions/github_com_LuisMarchio03_acim-backend_handler_cardFidelity.ErrorResponse"
+                        }
+                    }
+                }
+            },
+            "post": {
+                "description": "Create a new cardFidelity",
+                "consumes": [
+                    "application/json"
+                ],
+                "tags": [
+                    "CardFidelity"
+                ],
+                "summary": "Create CardFidelity",
+                "parameters": [
+                    {
+                        "description": "Request body",
+                        "name": "request",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/handler.CreateCardFidelityRequest"
+                        }
+                    }
+                ],
+                "responses": {
+                    "201": {
+                        "description": "Created",
+                        "schema": {
+                            "$ref": "#/definitions/handler.CreateCardFidelityResponse"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/github_com_LuisMarchio03_acim-backend_handler_cardFidelity.ErrorResponse"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "schema": {
+                            "$ref": "#/definitions/github_com_LuisMarchio03_acim-backend_handler_cardFidelity.ErrorResponse"
+                        }
+                    }
+                }
+            },
+            "delete": {
+                "description": "Delete a cardFidelity",
+                "consumes": [
+                    "application/json"
+                ],
+                "tags": [
+                    "CardFidelity"
+                ],
+                "summary": "Delete CardFidelity",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "CardFidelity identification",
+                        "name": "id",
+                        "in": "query",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/handler.DeleteCardFidelityResponse"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/github_com_LuisMarchio03_acim-backend_handler_cardFidelity.ErrorResponse"
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found",
+                        "schema": {
+                            "$ref": "#/definitions/github_com_LuisMarchio03_acim-backend_handler_cardFidelity.ErrorResponse"
+                        }
+                    }
+                }
+            }
+        },
         "/companies": {
             "get": {
                 "description": "List all Companies",
@@ -212,6 +413,207 @@ const docTemplate = `{
                         "description": "Not Found",
                         "schema": {
                             "$ref": "#/definitions/github_com_LuisMarchio03_acim-backend_handler_company.ErrorResponse"
+                        }
+                    }
+                }
+            }
+        },
+        "/point": {
+            "get": {
+                "description": "Show a point",
+                "consumes": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Point"
+                ],
+                "summary": "Show Point",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "Point identification",
+                        "name": "id",
+                        "in": "query",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/handler.ShowPointResponse"
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found",
+                        "schema": {
+                            "$ref": "#/definitions/github_com_LuisMarchio03_acim-backend_handler_point.ErrorResponse"
+                        }
+                    }
+                }
+            },
+            "put": {
+                "description": "Update a new point",
+                "consumes": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Point"
+                ],
+                "summary": "Update Point",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "Point identification",
+                        "name": "id",
+                        "in": "query",
+                        "required": true
+                    },
+                    {
+                        "description": "Request body",
+                        "name": "request",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/handler.UpdatePointRequest"
+                        }
+                    }
+                ],
+                "responses": {
+                    "201": {
+                        "description": "Created",
+                        "schema": {
+                            "$ref": "#/definitions/handler.UpdatePointResponse"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/github_com_LuisMarchio03_acim-backend_handler_point.ErrorResponse"
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found",
+                        "schema": {
+                            "$ref": "#/definitions/github_com_LuisMarchio03_acim-backend_handler_point.ErrorResponse"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "schema": {
+                            "$ref": "#/definitions/github_com_LuisMarchio03_acim-backend_handler_point.ErrorResponse"
+                        }
+                    }
+                }
+            },
+            "post": {
+                "description": "Create a new point",
+                "consumes": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Point"
+                ],
+                "summary": "Create Point",
+                "parameters": [
+                    {
+                        "description": "Request body",
+                        "name": "request",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/handler.CreatePointRequest"
+                        }
+                    }
+                ],
+                "responses": {
+                    "201": {
+                        "description": "Created",
+                        "schema": {
+                            "$ref": "#/definitions/handler.CreatePointResponse"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/github_com_LuisMarchio03_acim-backend_handler_point.ErrorResponse"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "schema": {
+                            "$ref": "#/definitions/github_com_LuisMarchio03_acim-backend_handler_point.ErrorResponse"
+                        }
+                    }
+                }
+            },
+            "delete": {
+                "description": "Delete a point",
+                "consumes": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Point"
+                ],
+                "summary": "Delete Point",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "Point identification",
+                        "name": "id",
+                        "in": "query",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/handler.DeletePointResponse"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/github_com_LuisMarchio03_acim-backend_handler_point.ErrorResponse"
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found",
+                        "schema": {
+                            "$ref": "#/definitions/github_com_LuisMarchio03_acim-backend_handler_point.ErrorResponse"
+                        }
+                    }
+                }
+            }
+        },
+        "/points": {
+            "get": {
+                "description": "List all Points",
+                "consumes": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Point"
+                ],
+                "summary": "List Points",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/handler.ListPointsResponse"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/github_com_LuisMarchio03_acim-backend_handler_point.ErrorResponse"
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found",
+                        "schema": {
+                            "$ref": "#/definitions/github_com_LuisMarchio03_acim-backend_handler_point.ErrorResponse"
                         }
                     }
                 }
@@ -420,7 +822,29 @@ const docTemplate = `{
         }
     },
     "definitions": {
+        "github_com_LuisMarchio03_acim-backend_handler_cardFidelity.ErrorResponse": {
+            "type": "object",
+            "properties": {
+                "errorCode": {
+                    "type": "string"
+                },
+                "message": {
+                    "type": "string"
+                }
+            }
+        },
         "github_com_LuisMarchio03_acim-backend_handler_company.ErrorResponse": {
+            "type": "object",
+            "properties": {
+                "errorCode": {
+                    "type": "string"
+                },
+                "message": {
+                    "type": "string"
+                }
+            }
+        },
+        "github_com_LuisMarchio03_acim-backend_handler_point.ErrorResponse": {
             "type": "object",
             "properties": {
                 "errorCode": {
@@ -436,6 +860,34 @@ const docTemplate = `{
             "properties": {
                 "errorCode": {
                     "type": "string"
+                },
+                "message": {
+                    "type": "string"
+                }
+            }
+        },
+        "handler.CreateCardFidelityRequest": {
+            "type": "object",
+            "properties": {
+                "companyId": {
+                    "type": "integer"
+                },
+                "finished": {
+                    "type": "boolean"
+                },
+                "totalPoints": {
+                    "type": "integer"
+                },
+                "userId": {
+                    "type": "integer"
+                }
+            }
+        },
+        "handler.CreateCardFidelityResponse": {
+            "type": "object",
+            "properties": {
+                "data": {
+                    "$ref": "#/definitions/schemas.CardFidelityResponse"
                 },
                 "message": {
                     "type": "string"
@@ -482,6 +934,25 @@ const docTemplate = `{
                 }
             }
         },
+        "handler.CreatePointRequest": {
+            "type": "object",
+            "properties": {
+                "cardFidelityId": {
+                    "type": "integer"
+                }
+            }
+        },
+        "handler.CreatePointResponse": {
+            "type": "object",
+            "properties": {
+                "data": {
+                    "$ref": "#/definitions/schemas.PointResponse"
+                },
+                "message": {
+                    "type": "string"
+                }
+            }
+        },
         "handler.CreateUserRequest": {
             "type": "object",
             "properties": {
@@ -519,11 +990,33 @@ const docTemplate = `{
                 }
             }
         },
+        "handler.DeleteCardFidelityResponse": {
+            "type": "object",
+            "properties": {
+                "data": {
+                    "$ref": "#/definitions/schemas.CardFidelityResponse"
+                },
+                "message": {
+                    "type": "string"
+                }
+            }
+        },
         "handler.DeleteCompanyResponse": {
             "type": "object",
             "properties": {
                 "data": {
                     "$ref": "#/definitions/schemas.CompanyResponse"
+                },
+                "message": {
+                    "type": "string"
+                }
+            }
+        },
+        "handler.DeletePointResponse": {
+            "type": "object",
+            "properties": {
+                "data": {
+                    "$ref": "#/definitions/schemas.PointResponse"
                 },
                 "message": {
                     "type": "string"
@@ -541,6 +1034,20 @@ const docTemplate = `{
                 }
             }
         },
+        "handler.ListCardFidelitiesResponse": {
+            "type": "object",
+            "properties": {
+                "data": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/schemas.CardFidelityResponse"
+                    }
+                },
+                "message": {
+                    "type": "string"
+                }
+            }
+        },
         "handler.ListCompaniesResponse": {
             "type": "object",
             "properties": {
@@ -548,6 +1055,20 @@ const docTemplate = `{
                     "type": "array",
                     "items": {
                         "$ref": "#/definitions/schemas.CompanyResponse"
+                    }
+                },
+                "message": {
+                    "type": "string"
+                }
+            }
+        },
+        "handler.ListPointsResponse": {
+            "type": "object",
+            "properties": {
+                "data": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/schemas.PointResponse"
                     }
                 },
                 "message": {
@@ -569,6 +1090,17 @@ const docTemplate = `{
                 }
             }
         },
+        "handler.ShowCardFidelityResponse": {
+            "type": "object",
+            "properties": {
+                "data": {
+                    "$ref": "#/definitions/schemas.CardFidelityResponse"
+                },
+                "message": {
+                    "type": "string"
+                }
+            }
+        },
         "handler.ShowCompanyResponse": {
             "type": "object",
             "properties": {
@@ -580,11 +1112,50 @@ const docTemplate = `{
                 }
             }
         },
+        "handler.ShowPointResponse": {
+            "type": "object",
+            "properties": {
+                "data": {
+                    "$ref": "#/definitions/schemas.PointResponse"
+                },
+                "message": {
+                    "type": "string"
+                }
+            }
+        },
         "handler.ShowUserResponse": {
             "type": "object",
             "properties": {
                 "data": {
                     "$ref": "#/definitions/schemas.UserResponse"
+                },
+                "message": {
+                    "type": "string"
+                }
+            }
+        },
+        "handler.UpdateCardFidelityRequest": {
+            "type": "object",
+            "properties": {
+                "companyId": {
+                    "type": "integer"
+                },
+                "finished": {
+                    "type": "boolean"
+                },
+                "totalPoints": {
+                    "type": "integer"
+                },
+                "userId": {
+                    "type": "integer"
+                }
+            }
+        },
+        "handler.UpdateCardFidelityResponse": {
+            "type": "object",
+            "properties": {
+                "data": {
+                    "$ref": "#/definitions/schemas.CardFidelityResponse"
                 },
                 "message": {
                     "type": "string"
@@ -631,6 +1202,25 @@ const docTemplate = `{
                 }
             }
         },
+        "handler.UpdatePointRequest": {
+            "type": "object",
+            "properties": {
+                "cardFidelityId": {
+                    "type": "integer"
+                }
+            }
+        },
+        "handler.UpdatePointResponse": {
+            "type": "object",
+            "properties": {
+                "data": {
+                    "$ref": "#/definitions/schemas.PointResponse"
+                },
+                "message": {
+                    "type": "string"
+                }
+            }
+        },
         "handler.UpdateUserRequest": {
             "type": "object",
             "properties": {
@@ -665,6 +1255,38 @@ const docTemplate = `{
                 },
                 "message": {
                     "type": "string"
+                }
+            }
+        },
+        "schemas.CardFidelityResponse": {
+            "type": "object",
+            "properties": {
+                "companyId": {
+                    "type": "integer"
+                },
+                "createdAt": {
+                    "type": "string"
+                },
+                "deletedAt": {
+                    "type": "string"
+                },
+                "finished": {
+                    "type": "boolean"
+                },
+                "point": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/schemas.PointResponse"
+                    }
+                },
+                "totalPoints": {
+                    "type": "integer"
+                },
+                "updatedAt": {
+                    "type": "string"
+                },
+                "userId": {
+                    "type": "integer"
                 }
             }
         },
@@ -712,6 +1334,29 @@ const docTemplate = `{
                     "items": {
                         "$ref": "#/definitions/schemas.UserResponse"
                     }
+                }
+            }
+        },
+        "schemas.PointResponse": {
+            "type": "object",
+            "properties": {
+                "cardFidelityId": {
+                    "type": "integer"
+                },
+                "createdAt": {
+                    "type": "string"
+                },
+                "deletedAt": {
+                    "type": "string"
+                },
+                "id": {
+                    "type": "integer"
+                },
+                "point": {
+                    "type": "integer"
+                },
+                "updatedAt": {
+                    "type": "string"
                 }
             }
         },

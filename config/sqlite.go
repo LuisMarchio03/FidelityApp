@@ -51,6 +51,20 @@ func InitializeSqlite() (*gorm.DB, error) {
 		return nil, err
 	}
 
+	// Point
+	err = db.AutoMigrate(&schemas.Point{})
+	if err != nil {
+		logger.Errorf("sqlite automigrate error: %v", err)
+		return nil, err
+	}
+
+	// CardFidelity
+	err = db.AutoMigrate(&schemas.CardFidelity{})
+	if err != nil {
+		logger.Errorf("sqlite automigrate error: %v", err)
+		return nil, err
+	}
+
 	// Return the DB
 	return db, nil
 }

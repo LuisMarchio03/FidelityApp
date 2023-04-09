@@ -1,5 +1,19 @@
 definitions:
+  github_com_LuisMarchio03_acim-backend_handler_cardFidelity.ErrorResponse:
+    properties:
+      errorCode:
+        type: string
+      message:
+        type: string
+    type: object
   github_com_LuisMarchio03_acim-backend_handler_company.ErrorResponse:
+    properties:
+      errorCode:
+        type: string
+      message:
+        type: string
+    type: object
+  github_com_LuisMarchio03_acim-backend_handler_point.ErrorResponse:
     properties:
       errorCode:
         type: string
@@ -10,6 +24,24 @@ definitions:
     properties:
       errorCode:
         type: string
+      message:
+        type: string
+    type: object
+  handler.CreateCardFidelityRequest:
+    properties:
+      companyId:
+        type: integer
+      finished:
+        type: boolean
+      totalPoints:
+        type: integer
+      userId:
+        type: integer
+    type: object
+  handler.CreateCardFidelityResponse:
+    properties:
+      data:
+        $ref: '#/definitions/schemas.CardFidelityResponse'
       message:
         type: string
     type: object
@@ -39,6 +71,18 @@ definitions:
       message:
         type: string
     type: object
+  handler.CreatePointRequest:
+    properties:
+      cardFidelityId:
+        type: integer
+    type: object
+  handler.CreatePointResponse:
+    properties:
+      data:
+        $ref: '#/definitions/schemas.PointResponse'
+      message:
+        type: string
+    type: object
   handler.CreateUserRequest:
     properties:
       address:
@@ -63,10 +107,24 @@ definitions:
       message:
         type: string
     type: object
+  handler.DeleteCardFidelityResponse:
+    properties:
+      data:
+        $ref: '#/definitions/schemas.CardFidelityResponse'
+      message:
+        type: string
+    type: object
   handler.DeleteCompanyResponse:
     properties:
       data:
         $ref: '#/definitions/schemas.CompanyResponse'
+      message:
+        type: string
+    type: object
+  handler.DeletePointResponse:
+    properties:
+      data:
+        $ref: '#/definitions/schemas.PointResponse'
       message:
         type: string
     type: object
@@ -77,11 +135,29 @@ definitions:
       message:
         type: string
     type: object
+  handler.ListCardFidelitiesResponse:
+    properties:
+      data:
+        items:
+          $ref: '#/definitions/schemas.CardFidelityResponse'
+        type: array
+      message:
+        type: string
+    type: object
   handler.ListCompaniesResponse:
     properties:
       data:
         items:
           $ref: '#/definitions/schemas.CompanyResponse'
+        type: array
+      message:
+        type: string
+    type: object
+  handler.ListPointsResponse:
+    properties:
+      data:
+        items:
+          $ref: '#/definitions/schemas.PointResponse'
         type: array
       message:
         type: string
@@ -95,6 +171,13 @@ definitions:
       message:
         type: string
     type: object
+  handler.ShowCardFidelityResponse:
+    properties:
+      data:
+        $ref: '#/definitions/schemas.CardFidelityResponse'
+      message:
+        type: string
+    type: object
   handler.ShowCompanyResponse:
     properties:
       data:
@@ -102,10 +185,35 @@ definitions:
       message:
         type: string
     type: object
+  handler.ShowPointResponse:
+    properties:
+      data:
+        $ref: '#/definitions/schemas.PointResponse'
+      message:
+        type: string
+    type: object
   handler.ShowUserResponse:
     properties:
       data:
         $ref: '#/definitions/schemas.UserResponse'
+      message:
+        type: string
+    type: object
+  handler.UpdateCardFidelityRequest:
+    properties:
+      companyId:
+        type: integer
+      finished:
+        type: boolean
+      totalPoints:
+        type: integer
+      userId:
+        type: integer
+    type: object
+  handler.UpdateCardFidelityResponse:
+    properties:
+      data:
+        $ref: '#/definitions/schemas.CardFidelityResponse'
       message:
         type: string
     type: object
@@ -135,6 +243,18 @@ definitions:
       message:
         type: string
     type: object
+  handler.UpdatePointRequest:
+    properties:
+      cardFidelityId:
+        type: integer
+    type: object
+  handler.UpdatePointResponse:
+    properties:
+      data:
+        $ref: '#/definitions/schemas.PointResponse'
+      message:
+        type: string
+    type: object
   handler.UpdateUserRequest:
     properties:
       address:
@@ -158,6 +278,27 @@ definitions:
         $ref: '#/definitions/schemas.UserResponse'
       message:
         type: string
+    type: object
+  schemas.CardFidelityResponse:
+    properties:
+      companyId:
+        type: integer
+      createdAt:
+        type: string
+      deletedAt:
+        type: string
+      finished:
+        type: boolean
+      point:
+        items:
+          $ref: '#/definitions/schemas.PointResponse'
+        type: array
+      totalPoints:
+        type: integer
+      updatedAt:
+        type: string
+      userId:
+        type: integer
     type: object
   schemas.CompanyResponse:
     properties:
@@ -190,6 +331,21 @@ definitions:
           $ref: '#/definitions/schemas.UserResponse'
         type: array
     type: object
+  schemas.PointResponse:
+    properties:
+      cardFidelityId:
+        type: integer
+      createdAt:
+        type: string
+      deletedAt:
+        type: string
+      id:
+        type: integer
+      point:
+        type: integer
+      updatedAt:
+        type: string
+    type: object
   schemas.UserResponse:
     properties:
       address:
@@ -218,6 +374,139 @@ definitions:
 info:
   contact: {}
 paths:
+  /cardFidelities:
+    get:
+      consumes:
+      - application/json
+      description: List all CardFidelities
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/handler.ListCardFidelitiesResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/github_com_LuisMarchio03_acim-backend_handler_cardFidelity.ErrorResponse'
+        "404":
+          description: Not Found
+          schema:
+            $ref: '#/definitions/github_com_LuisMarchio03_acim-backend_handler_cardFidelity.ErrorResponse'
+      summary: List CardFidelities
+      tags:
+      - CardFidelity
+  /cardFidelity:
+    delete:
+      consumes:
+      - application/json
+      description: Delete a cardFidelity
+      parameters:
+      - description: CardFidelity identification
+        in: query
+        name: id
+        required: true
+        type: string
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/handler.DeleteCardFidelityResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/github_com_LuisMarchio03_acim-backend_handler_cardFidelity.ErrorResponse'
+        "404":
+          description: Not Found
+          schema:
+            $ref: '#/definitions/github_com_LuisMarchio03_acim-backend_handler_cardFidelity.ErrorResponse'
+      summary: Delete CardFidelity
+      tags:
+      - CardFidelity
+    get:
+      consumes:
+      - application/json
+      description: Show a cardFidelity
+      parameters:
+      - description: CardFidelity identification
+        in: query
+        name: id
+        required: true
+        type: string
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/handler.ShowCardFidelityResponse'
+        "404":
+          description: Not Found
+          schema:
+            $ref: '#/definitions/github_com_LuisMarchio03_acim-backend_handler_cardFidelity.ErrorResponse'
+      summary: Show CardFidelity
+      tags:
+      - CardFidelity
+    post:
+      consumes:
+      - application/json
+      description: Create a new cardFidelity
+      parameters:
+      - description: Request body
+        in: body
+        name: request
+        required: true
+        schema:
+          $ref: '#/definitions/handler.CreateCardFidelityRequest'
+      responses:
+        "201":
+          description: Created
+          schema:
+            $ref: '#/definitions/handler.CreateCardFidelityResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/github_com_LuisMarchio03_acim-backend_handler_cardFidelity.ErrorResponse'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/github_com_LuisMarchio03_acim-backend_handler_cardFidelity.ErrorResponse'
+      summary: Create CardFidelity
+      tags:
+      - CardFidelity
+    put:
+      consumes:
+      - application/json
+      description: Update a new cardFidelity
+      parameters:
+      - description: CardFidelity identification
+        in: query
+        name: id
+        required: true
+        type: string
+      - description: Request body
+        in: body
+        name: request
+        required: true
+        schema:
+          $ref: '#/definitions/handler.UpdateCardFidelityRequest'
+      responses:
+        "201":
+          description: Created
+          schema:
+            $ref: '#/definitions/handler.UpdateCardFidelityResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/github_com_LuisMarchio03_acim-backend_handler_cardFidelity.ErrorResponse'
+        "404":
+          description: Not Found
+          schema:
+            $ref: '#/definitions/github_com_LuisMarchio03_acim-backend_handler_cardFidelity.ErrorResponse'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/github_com_LuisMarchio03_acim-backend_handler_cardFidelity.ErrorResponse'
+      summary: Update CardFidelity
+      tags:
+      - CardFidelity
   /companies:
     get:
       consumes:
@@ -351,6 +640,139 @@ paths:
       summary: Update Company
       tags:
       - Company
+  /point:
+    delete:
+      consumes:
+      - application/json
+      description: Delete a point
+      parameters:
+      - description: Point identification
+        in: query
+        name: id
+        required: true
+        type: string
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/handler.DeletePointResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/github_com_LuisMarchio03_acim-backend_handler_point.ErrorResponse'
+        "404":
+          description: Not Found
+          schema:
+            $ref: '#/definitions/github_com_LuisMarchio03_acim-backend_handler_point.ErrorResponse'
+      summary: Delete Point
+      tags:
+      - Point
+    get:
+      consumes:
+      - application/json
+      description: Show a point
+      parameters:
+      - description: Point identification
+        in: query
+        name: id
+        required: true
+        type: string
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/handler.ShowPointResponse'
+        "404":
+          description: Not Found
+          schema:
+            $ref: '#/definitions/github_com_LuisMarchio03_acim-backend_handler_point.ErrorResponse'
+      summary: Show Point
+      tags:
+      - Point
+    post:
+      consumes:
+      - application/json
+      description: Create a new point
+      parameters:
+      - description: Request body
+        in: body
+        name: request
+        required: true
+        schema:
+          $ref: '#/definitions/handler.CreatePointRequest'
+      responses:
+        "201":
+          description: Created
+          schema:
+            $ref: '#/definitions/handler.CreatePointResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/github_com_LuisMarchio03_acim-backend_handler_point.ErrorResponse'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/github_com_LuisMarchio03_acim-backend_handler_point.ErrorResponse'
+      summary: Create Point
+      tags:
+      - Point
+    put:
+      consumes:
+      - application/json
+      description: Update a new point
+      parameters:
+      - description: Point identification
+        in: query
+        name: id
+        required: true
+        type: string
+      - description: Request body
+        in: body
+        name: request
+        required: true
+        schema:
+          $ref: '#/definitions/handler.UpdatePointRequest'
+      responses:
+        "201":
+          description: Created
+          schema:
+            $ref: '#/definitions/handler.UpdatePointResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/github_com_LuisMarchio03_acim-backend_handler_point.ErrorResponse'
+        "404":
+          description: Not Found
+          schema:
+            $ref: '#/definitions/github_com_LuisMarchio03_acim-backend_handler_point.ErrorResponse'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/github_com_LuisMarchio03_acim-backend_handler_point.ErrorResponse'
+      summary: Update Point
+      tags:
+      - Point
+  /points:
+    get:
+      consumes:
+      - application/json
+      description: List all Points
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/handler.ListPointsResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/github_com_LuisMarchio03_acim-backend_handler_point.ErrorResponse'
+        "404":
+          description: Not Found
+          schema:
+            $ref: '#/definitions/github_com_LuisMarchio03_acim-backend_handler_point.ErrorResponse'
+      summary: List Points
+      tags:
+      - Point
   /user:
     delete:
       consumes:
