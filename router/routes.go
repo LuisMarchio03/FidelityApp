@@ -2,7 +2,9 @@ package router
 
 import (
 	docs "github.com/LuisMarchio03/acim-backend/docs"
+	cardFidelityHandler "github.com/LuisMarchio03/acim-backend/handler/cardFidelity"
 	companyHandler "github.com/LuisMarchio03/acim-backend/handler/company"
+	pointHandler "github.com/LuisMarchio03/acim-backend/handler/point"
 	userHandler "github.com/LuisMarchio03/acim-backend/handler/user"
 	"github.com/gin-gonic/gin"
 	swaggerfiles "github.com/swaggo/files"
@@ -13,11 +15,16 @@ func InitializeRoutes(r *gin.Engine) {
 	// Initialize the handlers
 	companyHandler.InitializeHandler()
 	userHandler.InitializeHandler()
+	pointHandler.InitializeHandler()
+	cardFidelityHandler.InitializeHandler()
+
 	basePath := "/api/v1"
 	docs.SwaggerInfo.BasePath = basePath
 
 	// Initialize the routes
 	v1 := r.Group("/api/v1")
+
+	// Company
 	{
 		v1.POST("/company", func(ctx *gin.Context) {
 			companyHandler.CreateCompanyHandler(ctx)
@@ -34,6 +41,10 @@ func InitializeRoutes(r *gin.Engine) {
 		v1.PUT("/company", func(ctx *gin.Context) {
 			companyHandler.UpdateCompanyHandler(ctx)
 		})
+	}
+
+	// User
+	{
 		v1.POST("/user", func(ctx *gin.Context) {
 			userHandler.CreateUserHandler(ctx)
 		})
@@ -48,6 +59,44 @@ func InitializeRoutes(r *gin.Engine) {
 		})
 		v1.PUT("/user", func(ctx *gin.Context) {
 			userHandler.UpdateUserHandler(ctx)
+		})
+	}
+
+	// Point
+	{
+		v1.GET("/points", func(ctx *gin.Context) {
+			pointHandler.ListPointsHandler(ctx)
+		})
+		v1.POST("/point", func(ctx *gin.Context) {
+			pointHandler.CreatePointHandler(ctx)
+		})
+		v1.DELETE("/point", func(ctx *gin.Context) {
+			pointHandler.DeletePointHandler(ctx)
+		})
+		v1.GET("/point", func(ctx *gin.Context) {
+			pointHandler.ShowPointHandler(ctx)
+		})
+		v1.PUT("/point", func(ctx *gin.Context) {
+			pointHandler.UpdatePointHandler(ctx)
+		})
+	}
+
+	// CardFidelity
+	{
+		v1.GET("/cardFidelities", func(ctx *gin.Context) {
+			cardFidelityHandler.ListCardFidelitiesHandler(ctx)
+		})
+		v1.POST("/cardFidelity", func(ctx *gin.Context) {
+			cardFidelityHandler.CreateCardFidelityHandler(ctx)
+		})
+		v1.DELETE("/cardFidelity", func(ctx *gin.Context) {
+			cardFidelityHandler.DeleteCardFidelityHandler(ctx)
+		})
+		v1.GET("/cardFidelity", func(ctx *gin.Context) {
+			cardFidelityHandler.ShowCardFidelityHandler(ctx)
+		})
+		v1.PUT("/cardFidelity", func(ctx *gin.Context) {
+			cardFidelityHandler.UpdateCardFidelityHandler(ctx)
 		})
 	}
 
