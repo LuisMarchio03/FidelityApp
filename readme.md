@@ -26,21 +26,41 @@
 - **CompanyId (optional)**
 - **Type (user / employee)**
 
+## CardFidelity
+
+- **UserId**
+- **CompanyId**
+- **TotalPoints**
+- **Point[]**
+- **Finished** 
+
+## Point
+
+- **CardFidelityId**
+- **Point: 1**
+- **CreatedAt**
+- **UpdatedAt**
+
 # Features
 
 - [x] Create Company
-- [] Create User
+- [x] Create User
+- [] Create CardFidelity
 - [x] List Companies
-- [] List Users
+- [x] List Users
 - [] List Users by Company
 - [] List Users by Type
 - [] List Users by Company and Type
-- [] Show Company
-- [] Show User
-- [] Update Company
-- [] Update User
+- [] List CardFidelity
+- [x] Show Company
+- [x] Show User
+- [] Show CardFidelity
+- [x] Update Company
+- [x] Update User
+- [] Update CardFidelity
 - [x] Delete Company
-- [] Delete User
+- [x] Delete User
+- [] Create CardFidelity
 - [] Login
 - [] Logout
 - [] Forgot Password
@@ -91,7 +111,50 @@
 
 - [] The user must not be able to delete a company with users registered.
 
+# CardFidelity Schema
 
+- [] The user must be able to register a card fidelity with user, company, total points and points.
+
+- [] The user must be able to update the card fidelity data.
+
+- [] The user must be able to list the card fidelity.
+
+- [] The user must be able to show the card fidelity data.
+
+- [] The user must be able to delete the card fidelity.
+
+- [] The user must not be able to register a card fidelity with a user already registered.
+
+- [] The user must not be able to update the user to a user already registered.
+
+- [] The user must not be able to delete a card fidelity with points registered.
+
+# Point Schema
+
+- [] The user must be able to register a point with card fidelity, point and created at.
+
+- [] The user must be able to update the point data.
+
+- [] The user must be able to list the points.
+
+- [] The user must be able to show the point data.
+
+- [] The user must be able to delete the point.
+
+- [] The user must not be able to register a point with a card fidelity already registered.
+
+- [] The user must not be able to update the card fidelity to a card fidelity already registered.
+
+- [] The user must not be able to delete a point with points registered.
+
+# Technologies
+
+- **GoLang**
+- **SQLite3**
+- **Docker**
+- **Docker Compose**
+- **Gin**
+- **Gorm**
 
 ## Author
 

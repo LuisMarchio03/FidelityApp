@@ -1,5 +1,7 @@
 # ACIM Backend
 
+![Logo](./.github/acim-backend.png)
+
 # Esquemas
 
 ## Company
@@ -23,6 +25,21 @@
 - **Password**
 - **CompanyId (optional)**
 - **Type (user / employee)**
+
+## CardFidelity
+
+- **UserId**
+- **CompanyId**
+- **TotalPoints**
+- **Point[]**
+- **Finished** 
+
+## Point
+
+- **CardFidelityId**
+- **Point: 1**
+- **CreatedAt**
+- **UpdatedAt**
 
 # Funcionalidades
 
@@ -87,6 +104,42 @@
 - [] O usuário não deve ser capaz de atualizar o CNPJ para um CNPJ já registrado.
 
 - [] O usuário não deve ser capaz de excluir uma empresa com usuários registrados.
+
+# CardFidelity Schema
+
+- [] O usuário deve ser capaz de registrar um cartão fidelidade com usuário, empresa, pontos totais e pontos.
+
+- [] O usuário deve ser capaz de atualizar os dados do cartão fidelidade.
+
+- [] O usuário deve ser capaz de listar os cartões fidelidade.
+
+- [] O usuário deve ser capaz de mostrar os dados do cartão fidelidade.
+
+- [] O usuário deve ser capaz de excluir o cartão fidelidade.
+
+- [] O usuário não deve ser capaz de registrar um cartão fidelidade com um usuário já registrado.
+
+- [] O usuário não deve ser capaz de atualizar o usuário para um usuário já registrado.
+
+- [] O usuário não deve ser capaz de excluir um cartão fidelidade com pontos registrados.
+
+# Point Schema
+
+- [] O usuário deve ser capaz de registrar um ponto com cartão fidelidade, ponto e criado em.
+
+- [] O usuário deve ser capaz de atualizar os dados do ponto.
+
+- [] O usuário deve ser capaz de listar os pontos.
+
+- [] O usuário deve ser capaz de mostrar os dados do ponto.
+
+- [] O usuário deve ser capaz de excluir o ponto.
+
+- [] O usuário não deve ser capaz de registrar um ponto com um cartão fidelidade já registrado.
+
+- [] O usuário não deve ser capaz de atualizar o cartão fidelidade para um cartão fidelidade já registrado.
+
+- [] O usuário não deve ser capaz de excluir um ponto com pontos registrados.
 
 ## Autor
 
