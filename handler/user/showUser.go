@@ -34,6 +34,7 @@ func ShowUserHandler(ctx *gin.Context) {
 			http.StatusNotFound,
 			fmt.Sprintf("error show user with id: %s", id),
 		)
+		return
 	}
 
 	sendSuccess(
