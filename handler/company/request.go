@@ -41,6 +41,9 @@ func (r *CreateCompanyRequest) Validate() error {
 	if r.AddressZipCode == "" {
 		return errParamsIsRequired("addressZipCode", "string")
 	}
+	if len(r.CNPJ) >= 14 {
+		return fmt.Errorf("cnpj must be >= 14")
+	}
 	return nil
 }
 

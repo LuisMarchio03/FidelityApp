@@ -40,6 +40,12 @@ func CreateCompanyHandler(ctx *gin.Context) {
 		AddressZipCode:    request.AddressZipCode,
 	}
 
+	if err := db.Where("cnpj = ?", request.CNPJ).First(&company).Error; err == nil {
+		logger.Errorf("company already exists")
+		sendError(ctx, http.StatusBadRequest, "company already exists")
+		return
+	}
+
 	if err := db.Create(&company).Error; err != nil {
 		logger.Errorf("error creating company: %v", err.Error())
 		sendError(ctx, http.StatusInternalServerError, "error creating company on database")

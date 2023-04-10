@@ -107,7 +107,7 @@ The ACIM Fidelity App is an application that allows the registration of users, c
 
 - [x] The user must be able to delete the company.
 
-- [] The user must not be able to register a company with a CNPJ already registered.
+- [x] The user must not be able to register a company with a CNPJ already registered.
 
 - [] The user must not be able to update the CNPJ to a CNPJ already registered.
 
