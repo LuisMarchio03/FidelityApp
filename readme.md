@@ -125,11 +125,11 @@ The ACIM Fidelity App is an application that allows the registration of users, c
 
 - [x] The user must be able to delete the card fidelity.
 
-- [] The user must not be able to register a card fidelity with a user already registered.
+<!-- - [] The user must not be able to register a card fidelity with a user already registered.
 
 - [] The user must not be able to update the user to a user already registered.
 
-- [] The user must not be able to delete a card fidelity with points registered.
+- [] The user must not be able to delete a card fidelity with points registered. -->
 
 # Point Schema
 
@@ -143,11 +143,11 @@ The ACIM Fidelity App is an application that allows the registration of users, c
 
 - [x] The user must be able to delete the point.
 
-- [] The user must not be able to register a point with a card fidelity already registered.
+<!-- - [] The user must not be able to register a point with a card fidelity already registered.
 
 - [] The user must not be able to update the card fidelity to a card fidelity already registered.
 
-- [] The user must not be able to delete a point with points registered.
+- [] The user must not be able to delete a point with points registered. -->
 
 # Technologies
 

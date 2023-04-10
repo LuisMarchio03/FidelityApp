@@ -120,11 +120,11 @@ ACIM Fidelity App é um aplicativo que permite o registro de usuários, empresas
 
 - [x] O usuário deve ser capaz de excluir o cartão fidelidade.
 
-- [] O usuário não deve ser capaz de registrar um cartão fidelidade com um usuário já registrado.
+<!-- - [] O usuário não deve ser capaz de registrar um cartão fidelidade com um usuário já registrado.
 
 - [] O usuário não deve ser capaz de atualizar o usuário para um usuário já registrado.
 
-- [] O usuário não deve ser capaz de excluir um cartão fidelidade com pontos registrados.
+- [] O usuário não deve ser capaz de excluir um cartão fidelidade com pontos registrados. -->
 
 # Point Schema
 
@@ -137,12 +137,12 @@ ACIM Fidelity App é um aplicativo que permite o registro de usuários, empresas
 - [x] O usuário deve ser capaz de mostrar os dados do ponto.
 
 - [x] O usuário deve ser capaz de excluir o ponto.
-
+<!-- 
 - [] O usuário não deve ser capaz de registrar um ponto com um cartão fidelidade já registrado.
 
 - [] O usuário não deve ser capaz de atualizar o cartão fidelidade para um cartão fidelidade já registrado.
 
-- [] O usuário não deve ser capaz de excluir um ponto com pontos registrados.
+- [] O usuário não deve ser capaz de excluir um ponto com pontos registrados. -->
 
 ## Autor
 
