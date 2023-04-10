@@ -42,6 +42,7 @@ func UpdateCompanyHandler(ctx *gin.Context) {
 	}
 
 	company := schemas.Company{}
+	companyAlredyExists := schemas.Company{}
 
 	// Find
 	if err := db.First(&company, id).Error; err != nil {
@@ -50,6 +51,13 @@ func UpdateCompanyHandler(ctx *gin.Context) {
 			http.StatusNotFound,
 			fmt.Sprintf("error update company with id: %s", id),
 		)
+	}
+
+	// Company Alredy Exists
+	if err := db.Where("cnpj = ?", request.CNPJ).First(&companyAlredyExists).Error; err == nil {
+		logger.Errorf("company already exists")
+		sendError(ctx, http.StatusBadRequest, "company already exists")
+		return
 	}
 
 	// Update

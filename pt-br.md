@@ -104,7 +104,7 @@ ACIM Fidelity App é um aplicativo que permite o registro de usuários, empresas
 
 - [x] O usuário não deve ser capaz de registrar uma empresa com um CNPJ já registrado.
 
-- [] O usuário não deve ser capaz de atualizar o CNPJ para um CNPJ já registrado.
+- [x] O usuário não deve ser capaz de atualizar o CNPJ para um CNPJ já registrado.
 
 - [] O usuário não deve ser capaz de excluir uma empresa com usuários registrados.
 
