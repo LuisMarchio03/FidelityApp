@@ -84,7 +84,7 @@ ACIM Fidelity App é um aplicativo que permite o registro de usuários, empresas
 
 - [] O usuário deve ser capaz de atualizar o perfil (nome, email e senha).
 
-- [] O usuário não deve ser capaz de criar um novo usuário com um email já registrado.
+- [x] O usuário não deve ser capaz de criar um novo usuário com um email já registrado.
 
 - [] O usuário não deve ser capaz de atualizar o email para um email já registrado.
 
