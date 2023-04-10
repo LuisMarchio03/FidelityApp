@@ -39,6 +39,12 @@ func CreateUserHandler(ctx *gin.Context) {
 		Type:      request.Type,
 	}
 
+	if err := db.Where("email = ?", request.Email).First(&user).Error; err == nil {
+		logger.Errorf("user already exists")
+		sendError(ctx, http.StatusBadRequest, "user already exists")
+		return
+	}
+
 	if err := db.Create(&user).Error; err != nil {
 		logger.Errorf("error creating user: %v", err.Error())
 		sendError(ctx, http.StatusInternalServerError, "error creating user on database")
