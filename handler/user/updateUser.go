@@ -42,6 +42,7 @@ func UpdateUserHandler(ctx *gin.Context) {
 	}
 
 	user := schemas.User{}
+	userAlreadyExists := schemas.User{}
 
 	// Find
 	if err := db.First(&user, id).Error; err != nil {
@@ -50,6 +51,13 @@ func UpdateUserHandler(ctx *gin.Context) {
 			http.StatusNotFound,
 			fmt.Sprintf("error update user with id: %s", id),
 		)
+	}
+
+	// User Already Exists
+	if err := db.Where("email = ?", request.Email).First(&userAlreadyExists).Error; err == nil {
+		logger.Errorf("user already exists")
+		sendError(ctx, http.StatusBadRequest, "user already exists")
+		return
 	}
 
 	// Update
