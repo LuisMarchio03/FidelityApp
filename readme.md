@@ -75,7 +75,7 @@ The ACIM Fidelity App is an application that allows the registration of users, c
 
 ## Schema user
 
-- [x] The user must be able to register in the application with name, email, password and type (user / employee).
+- [] The user must be able to register in the application with name, email, password and type (user / employee / admin).
 
 - [x] The user must be able to update name, email and password.
 

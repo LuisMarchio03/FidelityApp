@@ -70,7 +70,7 @@ ACIM Fidelity App é um aplicativo que permite o registro de usuários, empresas
 
 ## Schema user
 
-- [x] O usuário deve ser capaz de se registrar no aplicativo com nome, email, senha e tipo (usuário / funcionário).
+- [] O usuário deve ser capaz de se registrar no aplicativo com nome, email, senha e tipo (usuário / funcionário / admin).
 
 - [x] O usuário deve ser capaz de atualizar nome, email e senha.
 
