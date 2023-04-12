@@ -171,6 +171,20 @@ definitions:
       message:
         type: string
     type: object
+  handler.LoginUserRequest:
+    properties:
+      email:
+        type: string
+      password:
+        type: string
+    type: object
+  handler.LoginUserResponse:
+    properties:
+      message:
+        type: string
+      token:
+        type: string
+    type: object
   handler.ShowCardFidelityResponse:
     properties:
       data:
@@ -640,6 +654,34 @@ paths:
       summary: Update Company
       tags:
       - Company
+  /login:
+    post:
+      consumes:
+      - application/json
+      description: Login a user
+      parameters:
+      - description: Request body
+        in: body
+        name: request
+        required: true
+        schema:
+          $ref: '#/definitions/handler.LoginUserRequest'
+      responses:
+        "201":
+          description: Created
+          schema:
+            $ref: '#/definitions/handler.LoginUserResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/github_com_LuisMarchio03_acim-backend_handler_user.ErrorResponse'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/github_com_LuisMarchio03_acim-backend_handler_user.ErrorResponse'
+      summary: Login User
+      tags:
+      - Auth
   /point:
     delete:
       consumes:
