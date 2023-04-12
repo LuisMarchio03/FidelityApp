@@ -29,12 +29,19 @@ func CreateUserHandler(ctx *gin.Context) {
 		return
 	}
 
+	passwordHash, err := schemas.HashPassword(request.Password)
+	if err != nil {
+		logger.Errorf("error hashing password: %v", err.Error())
+		sendError(ctx, http.StatusInternalServerError, "error hashing password")
+		return
+	}
+
 	user := schemas.User{
 		Name:      request.Name,
 		Email:     request.Email,
 		Address:   request.Address,
 		Phone:     request.Phone,
-		Password:  request.Password,
+		Password:  passwordHash,
 		CompanyId: request.CompanyId,
 		Type:      request.Type,
 	}
