@@ -14,6 +14,8 @@ import (
 // @Tags Company
 // @Accept json
 // @Producer json
+// @Security ApiKeyAuth
+// @param Authorization header string true "Authorization"
 // @Param request body CreateCompanyRequest true "Request body"
 // @Success 201 {object} CreateCompanyResponse
 // @Failure 400 {object} ErrorResponse
