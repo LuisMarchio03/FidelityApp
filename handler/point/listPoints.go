@@ -15,6 +15,8 @@ import (
 // @Tags Point
 // @Accept json
 // @Producer json
+// @Security ApiKeyAuth
+// @param Authorization header string true "Authorization"
 // @Success 200 {object} ListPointsResponse
 // @Failure 400 {object} ErrorResponse
 // @Failure 404 {object} ErrorResponse
