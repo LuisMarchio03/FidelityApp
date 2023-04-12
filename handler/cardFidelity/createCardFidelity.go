@@ -14,6 +14,8 @@ import (
 // @Tags CardFidelity
 // @Accept json
 // @Producer json
+// @Security ApiKeyAuth
+// @param Authorization header string true "Authorization"
 // @Param request body CreateCardFidelityRequest true "Request body"
 // @Success 201 {object} CreateCardFidelityResponse
 // @Failure 400 {object} ErrorResponse
