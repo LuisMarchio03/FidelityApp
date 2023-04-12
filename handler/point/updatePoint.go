@@ -15,6 +15,8 @@ import (
 // @Tags Point
 // @Accept json
 // @Producer json
+// @Security ApiKeyAuth
+// @param Authorization header string true "Authorization"
 // @Param id query string true "Point identification"
 // @Param request body UpdatePointRequest true "Request body"
 // @Success 201 {object} UpdatePointResponse
