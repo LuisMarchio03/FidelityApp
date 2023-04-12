@@ -14,6 +14,8 @@ import (
 // @Tags User
 // @Accept json
 // @Producer json
+// @Security ApiKeyAuth
+// @param Authorization header string true "Authorization"
 // @Param request body CreateUserRequest true "Request body"
 // @Success 201 {object} CreateUserResponse
 // @Failure 400 {object} ErrorResponse
