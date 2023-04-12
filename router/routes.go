@@ -61,7 +61,7 @@ func InitializeRoutes(r *gin.Engine) {
 		v1.PUT("/user", middleware.AuthMiddleware(), func(ctx *gin.Context) {
 			userHandler.UpdateUserHandler(ctx)
 		})
-		v1.POST("/login", middleware.AuthMiddleware(), func(ctx *gin.Context) {
+		v1.POST("/login", func(ctx *gin.Context) {
 			userHandler.LoginUserHandler(ctx)
 		})
 	}
