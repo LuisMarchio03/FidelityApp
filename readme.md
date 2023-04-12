@@ -79,7 +79,7 @@ The ACIM Fidelity App is an application that allows the registration of users, c
 
 - [x] The user must be able to update name, email and password.
 
-- [] The user must be able to login with email and password.
+- [x] The user must be able to login with email and password.
 
 - [] The user must be able to logout.
 
