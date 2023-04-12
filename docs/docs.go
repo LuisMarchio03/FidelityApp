@@ -18,6 +18,11 @@ const docTemplate = `{
     "paths": {
         "/cardFidelities": {
             "get": {
+                "security": [
+                    {
+                        "ApiKeyAuth": []
+                    }
+                ],
                 "description": "List all CardFidelities",
                 "consumes": [
                     "application/json"
@@ -26,6 +31,15 @@ const docTemplate = `{
                     "CardFidelity"
                 ],
                 "summary": "List CardFidelities",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "Authorization",
+                        "name": "Authorization",
+                        "in": "header",
+                        "required": true
+                    }
+                ],
                 "responses": {
                     "200": {
                         "description": "OK",
@@ -50,6 +64,11 @@ const docTemplate = `{
         },
         "/cardFidelity": {
             "get": {
+                "security": [
+                    {
+                        "ApiKeyAuth": []
+                    }
+                ],
                 "description": "Show a cardFidelity",
                 "consumes": [
                     "application/json"
@@ -59,6 +78,13 @@ const docTemplate = `{
                 ],
                 "summary": "Show CardFidelity",
                 "parameters": [
+                    {
+                        "type": "string",
+                        "description": "Authorization",
+                        "name": "Authorization",
+                        "in": "header",
+                        "required": true
+                    },
                     {
                         "type": "string",
                         "description": "CardFidelity identification",
@@ -83,6 +109,11 @@ const docTemplate = `{
                 }
             },
             "put": {
+                "security": [
+                    {
+                        "ApiKeyAuth": []
+                    }
+                ],
                 "description": "Update a new cardFidelity",
                 "consumes": [
                     "application/json"
@@ -92,6 +123,13 @@ const docTemplate = `{
                 ],
                 "summary": "Update CardFidelity",
                 "parameters": [
+                    {
+                        "type": "string",
+                        "description": "Authorization",
+                        "name": "Authorization",
+                        "in": "header",
+                        "required": true
+                    },
                     {
                         "type": "string",
                         "description": "CardFidelity identification",
@@ -137,6 +175,11 @@ const docTemplate = `{
                 }
             },
             "post": {
+                "security": [
+                    {
+                        "ApiKeyAuth": []
+                    }
+                ],
                 "description": "Create a new cardFidelity",
                 "consumes": [
                     "application/json"
@@ -146,6 +189,13 @@ const docTemplate = `{
                 ],
                 "summary": "Create CardFidelity",
                 "parameters": [
+                    {
+                        "type": "string",
+                        "description": "Authorization",
+                        "name": "Authorization",
+                        "in": "header",
+                        "required": true
+                    },
                     {
                         "description": "Request body",
                         "name": "request",
@@ -178,6 +228,11 @@ const docTemplate = `{
                 }
             },
             "delete": {
+                "security": [
+                    {
+                        "ApiKeyAuth": []
+                    }
+                ],
                 "description": "Delete a cardFidelity",
                 "consumes": [
                     "application/json"
@@ -187,6 +242,13 @@ const docTemplate = `{
                 ],
                 "summary": "Delete CardFidelity",
                 "parameters": [
+                    {
+                        "type": "string",
+                        "description": "Authorization",
+                        "name": "Authorization",
+                        "in": "header",
+                        "required": true
+                    },
                     {
                         "type": "string",
                         "description": "CardFidelity identification",
@@ -219,6 +281,11 @@ const docTemplate = `{
         },
         "/companies": {
             "get": {
+                "security": [
+                    {
+                        "ApiKeyAuth": []
+                    }
+                ],
                 "description": "List all Companies",
                 "consumes": [
                     "application/json"
@@ -227,6 +294,15 @@ const docTemplate = `{
                     "Company"
                 ],
                 "summary": "List Companies",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "Authorization",
+                        "name": "Authorization",
+                        "in": "header",
+                        "required": true
+                    }
+                ],
                 "responses": {
                     "200": {
                         "description": "OK",
@@ -251,6 +327,11 @@ const docTemplate = `{
         },
         "/company": {
             "get": {
+                "security": [
+                    {
+                        "ApiKeyAuth": []
+                    }
+                ],
                 "description": "Show a company",
                 "consumes": [
                     "application/json"
@@ -260,6 +341,13 @@ const docTemplate = `{
                 ],
                 "summary": "Show Company",
                 "parameters": [
+                    {
+                        "type": "string",
+                        "description": "Authorization",
+                        "name": "Authorization",
+                        "in": "header",
+                        "required": true
+                    },
                     {
                         "type": "string",
                         "description": "Company identification",
@@ -284,6 +372,11 @@ const docTemplate = `{
                 }
             },
             "put": {
+                "security": [
+                    {
+                        "ApiKeyAuth": []
+                    }
+                ],
                 "description": "Update a new company",
                 "consumes": [
                     "application/json"
@@ -293,6 +386,13 @@ const docTemplate = `{
                 ],
                 "summary": "Update Company",
                 "parameters": [
+                    {
+                        "type": "string",
+                        "description": "Authorization",
+                        "name": "Authorization",
+                        "in": "header",
+                        "required": true
+                    },
                     {
                         "type": "string",
                         "description": "Company identification",
@@ -338,6 +438,11 @@ const docTemplate = `{
                 }
             },
             "post": {
+                "security": [
+                    {
+                        "ApiKeyAuth": []
+                    }
+                ],
                 "description": "Create a new company",
                 "consumes": [
                     "application/json"
@@ -347,6 +452,13 @@ const docTemplate = `{
                 ],
                 "summary": "Create Company",
                 "parameters": [
+                    {
+                        "type": "string",
+                        "description": "Authorization",
+                        "name": "Authorization",
+                        "in": "header",
+                        "required": true
+                    },
                     {
                         "description": "Request body",
                         "name": "request",
@@ -379,6 +491,11 @@ const docTemplate = `{
                 }
             },
             "delete": {
+                "security": [
+                    {
+                        "ApiKeyAuth": []
+                    }
+                ],
                 "description": "Delete a company",
                 "consumes": [
                     "application/json"
@@ -388,6 +505,13 @@ const docTemplate = `{
                 ],
                 "summary": "Delete Company",
                 "parameters": [
+                    {
+                        "type": "string",
+                        "description": "Authorization",
+                        "name": "Authorization",
+                        "in": "header",
+                        "required": true
+                    },
                     {
                         "type": "string",
                         "description": "Company identification",
@@ -463,6 +587,11 @@ const docTemplate = `{
         },
         "/point": {
             "get": {
+                "security": [
+                    {
+                        "ApiKeyAuth": []
+                    }
+                ],
                 "description": "Show a point",
                 "consumes": [
                     "application/json"
@@ -472,6 +601,13 @@ const docTemplate = `{
                 ],
                 "summary": "Show Point",
                 "parameters": [
+                    {
+                        "type": "string",
+                        "description": "Authorization",
+                        "name": "Authorization",
+                        "in": "header",
+                        "required": true
+                    },
                     {
                         "type": "string",
                         "description": "Point identification",
@@ -496,6 +632,11 @@ const docTemplate = `{
                 }
             },
             "put": {
+                "security": [
+                    {
+                        "ApiKeyAuth": []
+                    }
+                ],
                 "description": "Update a new point",
                 "consumes": [
                     "application/json"
@@ -505,6 +646,13 @@ const docTemplate = `{
                 ],
                 "summary": "Update Point",
                 "parameters": [
+                    {
+                        "type": "string",
+                        "description": "Authorization",
+                        "name": "Authorization",
+                        "in": "header",
+                        "required": true
+                    },
                     {
                         "type": "string",
                         "description": "Point identification",
@@ -550,6 +698,11 @@ const docTemplate = `{
                 }
             },
             "post": {
+                "security": [
+                    {
+                        "ApiKeyAuth": []
+                    }
+                ],
                 "description": "Create a new point",
                 "consumes": [
                     "application/json"
@@ -559,6 +712,13 @@ const docTemplate = `{
                 ],
                 "summary": "Create Point",
                 "parameters": [
+                    {
+                        "type": "string",
+                        "description": "Authorization",
+                        "name": "Authorization",
+                        "in": "header",
+                        "required": true
+                    },
                     {
                         "description": "Request body",
                         "name": "request",
@@ -591,6 +751,11 @@ const docTemplate = `{
                 }
             },
             "delete": {
+                "security": [
+                    {
+                        "ApiKeyAuth": []
+                    }
+                ],
                 "description": "Delete a point",
                 "consumes": [
                     "application/json"
@@ -600,6 +765,13 @@ const docTemplate = `{
                 ],
                 "summary": "Delete Point",
                 "parameters": [
+                    {
+                        "type": "string",
+                        "description": "Authorization",
+                        "name": "Authorization",
+                        "in": "header",
+                        "required": true
+                    },
                     {
                         "type": "string",
                         "description": "Point identification",
@@ -632,6 +804,11 @@ const docTemplate = `{
         },
         "/points": {
             "get": {
+                "security": [
+                    {
+                        "ApiKeyAuth": []
+                    }
+                ],
                 "description": "List all Points",
                 "consumes": [
                     "application/json"
@@ -640,6 +817,15 @@ const docTemplate = `{
                     "Point"
                 ],
                 "summary": "List Points",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "Authorization",
+                        "name": "Authorization",
+                        "in": "header",
+                        "required": true
+                    }
+                ],
                 "responses": {
                     "200": {
                         "description": "OK",
@@ -664,6 +850,11 @@ const docTemplate = `{
         },
         "/user": {
             "get": {
+                "security": [
+                    {
+                        "ApiKeyAuth": []
+                    }
+                ],
                 "description": "Show a user",
                 "consumes": [
                     "application/json"
@@ -673,6 +864,13 @@ const docTemplate = `{
                 ],
                 "summary": "Show User",
                 "parameters": [
+                    {
+                        "type": "string",
+                        "description": "Authorization",
+                        "name": "Authorization",
+                        "in": "header",
+                        "required": true
+                    },
                     {
                         "type": "string",
                         "description": "User identification",
@@ -697,6 +895,11 @@ const docTemplate = `{
                 }
             },
             "put": {
+                "security": [
+                    {
+                        "ApiKeyAuth": []
+                    }
+                ],
                 "description": "Update a new user",
                 "consumes": [
                     "application/json"
@@ -706,6 +909,13 @@ const docTemplate = `{
                 ],
                 "summary": "Update User",
                 "parameters": [
+                    {
+                        "type": "string",
+                        "description": "Authorization",
+                        "name": "Authorization",
+                        "in": "header",
+                        "required": true
+                    },
                     {
                         "type": "string",
                         "description": "User identification",
@@ -804,6 +1014,11 @@ const docTemplate = `{
                 }
             },
             "delete": {
+                "security": [
+                    {
+                        "ApiKeyAuth": []
+                    }
+                ],
                 "description": "Delete a user",
                 "consumes": [
                     "application/json"
@@ -813,6 +1028,13 @@ const docTemplate = `{
                 ],
                 "summary": "Delete User",
                 "parameters": [
+                    {
+                        "type": "string",
+                        "description": "Authorization",
+                        "name": "Authorization",
+                        "in": "header",
+                        "required": true
+                    },
                     {
                         "type": "string",
                         "description": "User identification",
@@ -845,6 +1067,11 @@ const docTemplate = `{
         },
         "/users": {
             "get": {
+                "security": [
+                    {
+                        "ApiKeyAuth": []
+                    }
+                ],
                 "description": "List all Users",
                 "consumes": [
                     "application/json"
@@ -853,6 +1080,15 @@ const docTemplate = `{
                     "User"
                 ],
                 "summary": "List Users",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "Authorization",
+                        "name": "Authorization",
+                        "in": "header",
+                        "required": true
+                    }
+                ],
                 "responses": {
                     "200": {
                         "description": "OK",

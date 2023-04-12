@@ -6,6 +6,11 @@
     "paths": {
         "/cardFidelities": {
             "get": {
+                "security": [
+                    {
+                        "ApiKeyAuth": []
+                    }
+                ],
                 "description": "List all CardFidelities",
                 "consumes": [
                     "application/json"
@@ -14,6 +19,15 @@
                     "CardFidelity"
                 ],
                 "summary": "List CardFidelities",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "Authorization",
+                        "name": "Authorization",
+                        "in": "header",
+                        "required": true
+                    }
+                ],
                 "responses": {
                     "200": {
                         "description": "OK",
@@ -38,6 +52,11 @@
         },
         "/cardFidelity": {
             "get": {
+                "security": [
+                    {
+                        "ApiKeyAuth": []
+                    }
+                ],
                 "description": "Show a cardFidelity",
                 "consumes": [
                     "application/json"
@@ -47,6 +66,13 @@
                 ],
                 "summary": "Show CardFidelity",
                 "parameters": [
+                    {
+                        "type": "string",
+                        "description": "Authorization",
+                        "name": "Authorization",
+                        "in": "header",
+                        "required": true
+                    },
                     {
                         "type": "string",
                         "description": "CardFidelity identification",
@@ -71,6 +97,11 @@
                 }
             },
             "put": {
+                "security": [
+                    {
+                        "ApiKeyAuth": []
+                    }
+                ],
                 "description": "Update a new cardFidelity",
                 "consumes": [
                     "application/json"
@@ -80,6 +111,13 @@
                 ],
                 "summary": "Update CardFidelity",
                 "parameters": [
+                    {
+                        "type": "string",
+                        "description": "Authorization",
+                        "name": "Authorization",
+                        "in": "header",
+                        "required": true
+                    },
                     {
                         "type": "string",
                         "description": "CardFidelity identification",
@@ -125,6 +163,11 @@
                 }
             },
             "post": {
+                "security": [
+                    {
+                        "ApiKeyAuth": []
+                    }
+                ],
                 "description": "Create a new cardFidelity",
                 "consumes": [
                     "application/json"
@@ -134,6 +177,13 @@
                 ],
                 "summary": "Create CardFidelity",
                 "parameters": [
+                    {
+                        "type": "string",
+                        "description": "Authorization",
+                        "name": "Authorization",
+                        "in": "header",
+                        "required": true
+                    },
                     {
                         "description": "Request body",
                         "name": "request",
@@ -166,6 +216,11 @@
                 }
             },
             "delete": {
+                "security": [
+                    {
+                        "ApiKeyAuth": []
+                    }
+                ],
                 "description": "Delete a cardFidelity",
                 "consumes": [
                     "application/json"
@@ -175,6 +230,13 @@
                 ],
                 "summary": "Delete CardFidelity",
                 "parameters": [
+                    {
+                        "type": "string",
+                        "description": "Authorization",
+                        "name": "Authorization",
+                        "in": "header",
+                        "required": true
+                    },
                     {
                         "type": "string",
                         "description": "CardFidelity identification",
@@ -207,6 +269,11 @@
         },
         "/companies": {
             "get": {
+                "security": [
+                    {
+                        "ApiKeyAuth": []
+                    }
+                ],
                 "description": "List all Companies",
                 "consumes": [
                     "application/json"
@@ -215,6 +282,15 @@
                     "Company"
                 ],
                 "summary": "List Companies",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "Authorization",
+                        "name": "Authorization",
+                        "in": "header",
+                        "required": true
+                    }
+                ],
                 "responses": {
                     "200": {
                         "description": "OK",
@@ -239,6 +315,11 @@
         },
         "/company": {
             "get": {
+                "security": [
+                    {
+                        "ApiKeyAuth": []
+                    }
+                ],
                 "description": "Show a company",
                 "consumes": [
                     "application/json"
@@ -248,6 +329,13 @@
                 ],
                 "summary": "Show Company",
                 "parameters": [
+                    {
+                        "type": "string",
+                        "description": "Authorization",
+                        "name": "Authorization",
+                        "in": "header",
+                        "required": true
+                    },
                     {
                         "type": "string",
                         "description": "Company identification",
@@ -272,6 +360,11 @@
                 }
             },
             "put": {
+                "security": [
+                    {
+                        "ApiKeyAuth": []
+                    }
+                ],
                 "description": "Update a new company",
                 "consumes": [
                     "application/json"
@@ -281,6 +374,13 @@
                 ],
                 "summary": "Update Company",
                 "parameters": [
+                    {
+                        "type": "string",
+                        "description": "Authorization",
+                        "name": "Authorization",
+                        "in": "header",
+                        "required": true
+                    },
                     {
                         "type": "string",
                         "description": "Company identification",
@@ -326,6 +426,11 @@
                 }
             },
             "post": {
+                "security": [
+                    {
+                        "ApiKeyAuth": []
+                    }
+                ],
                 "description": "Create a new company",
                 "consumes": [
                     "application/json"
@@ -335,6 +440,13 @@
                 ],
                 "summary": "Create Company",
                 "parameters": [
+                    {
+                        "type": "string",
+                        "description": "Authorization",
+                        "name": "Authorization",
+                        "in": "header",
+                        "required": true
+                    },
                     {
                         "description": "Request body",
                         "name": "request",
@@ -367,6 +479,11 @@
                 }
             },
             "delete": {
+                "security": [
+                    {
+                        "ApiKeyAuth": []
+                    }
+                ],
                 "description": "Delete a company",
                 "consumes": [
                     "application/json"
@@ -376,6 +493,13 @@
                 ],
                 "summary": "Delete Company",
                 "parameters": [
+                    {
+                        "type": "string",
+                        "description": "Authorization",
+                        "name": "Authorization",
+                        "in": "header",
+                        "required": true
+                    },
                     {
                         "type": "string",
                         "description": "Company identification",
@@ -451,6 +575,11 @@
         },
         "/point": {
             "get": {
+                "security": [
+                    {
+                        "ApiKeyAuth": []
+                    }
+                ],
                 "description": "Show a point",
                 "consumes": [
                     "application/json"
@@ -460,6 +589,13 @@
                 ],
                 "summary": "Show Point",
                 "parameters": [
+                    {
+                        "type": "string",
+                        "description": "Authorization",
+                        "name": "Authorization",
+                        "in": "header",
+                        "required": true
+                    },
                     {
                         "type": "string",
                         "description": "Point identification",
@@ -484,6 +620,11 @@
                 }
             },
             "put": {
+                "security": [
+                    {
+                        "ApiKeyAuth": []
+                    }
+                ],
                 "description": "Update a new point",
                 "consumes": [
                     "application/json"
@@ -493,6 +634,13 @@
                 ],
                 "summary": "Update Point",
                 "parameters": [
+                    {
+                        "type": "string",
+                        "description": "Authorization",
+                        "name": "Authorization",
+                        "in": "header",
+                        "required": true
+                    },
                     {
                         "type": "string",
                         "description": "Point identification",
@@ -538,6 +686,11 @@
                 }
             },
             "post": {
+                "security": [
+                    {
+                        "ApiKeyAuth": []
+                    }
+                ],
                 "description": "Create a new point",
                 "consumes": [
                     "application/json"
@@ -547,6 +700,13 @@
                 ],
                 "summary": "Create Point",
                 "parameters": [
+                    {
+                        "type": "string",
+                        "description": "Authorization",
+                        "name": "Authorization",
+                        "in": "header",
+                        "required": true
+                    },
                     {
                         "description": "Request body",
                         "name": "request",
@@ -579,6 +739,11 @@
                 }
             },
             "delete": {
+                "security": [
+                    {
+                        "ApiKeyAuth": []
+                    }
+                ],
                 "description": "Delete a point",
                 "consumes": [
                     "application/json"
@@ -588,6 +753,13 @@
                 ],
                 "summary": "Delete Point",
                 "parameters": [
+                    {
+                        "type": "string",
+                        "description": "Authorization",
+                        "name": "Authorization",
+                        "in": "header",
+                        "required": true
+                    },
                     {
                         "type": "string",
                         "description": "Point identification",
@@ -620,6 +792,11 @@
         },
         "/points": {
             "get": {
+                "security": [
+                    {
+                        "ApiKeyAuth": []
+                    }
+                ],
                 "description": "List all Points",
                 "consumes": [
                     "application/json"
@@ -628,6 +805,15 @@
                     "Point"
                 ],
                 "summary": "List Points",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "Authorization",
+                        "name": "Authorization",
+                        "in": "header",
+                        "required": true
+                    }
+                ],
                 "responses": {
                     "200": {
                         "description": "OK",
@@ -652,6 +838,11 @@
         },
         "/user": {
             "get": {
+                "security": [
+                    {
+                        "ApiKeyAuth": []
+                    }
+                ],
                 "description": "Show a user",
                 "consumes": [
                     "application/json"
@@ -661,6 +852,13 @@
                 ],
                 "summary": "Show User",
                 "parameters": [
+                    {
+                        "type": "string",
+                        "description": "Authorization",
+                        "name": "Authorization",
+                        "in": "header",
+                        "required": true
+                    },
                     {
                         "type": "string",
                         "description": "User identification",
@@ -685,6 +883,11 @@
                 }
             },
             "put": {
+                "security": [
+                    {
+                        "ApiKeyAuth": []
+                    }
+                ],
                 "description": "Update a new user",
                 "consumes": [
                     "application/json"
@@ -694,6 +897,13 @@
                 ],
                 "summary": "Update User",
                 "parameters": [
+                    {
+                        "type": "string",
+                        "description": "Authorization",
+                        "name": "Authorization",
+                        "in": "header",
+                        "required": true
+                    },
                     {
                         "type": "string",
                         "description": "User identification",
@@ -792,6 +1002,11 @@
                 }
             },
             "delete": {
+                "security": [
+                    {
+                        "ApiKeyAuth": []
+                    }
+                ],
                 "description": "Delete a user",
                 "consumes": [
                     "application/json"
@@ -801,6 +1016,13 @@
                 ],
                 "summary": "Delete User",
                 "parameters": [
+                    {
+                        "type": "string",
+                        "description": "Authorization",
+                        "name": "Authorization",
+                        "in": "header",
+                        "required": true
+                    },
                     {
                         "type": "string",
                         "description": "User identification",
@@ -833,6 +1055,11 @@
         },
         "/users": {
             "get": {
+                "security": [
+                    {
+                        "ApiKeyAuth": []
+                    }
+                ],
                 "description": "List all Users",
                 "consumes": [
                     "application/json"
@@ -841,6 +1068,15 @@
                     "User"
                 ],
                 "summary": "List Users",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "Authorization",
+                        "name": "Authorization",
+                        "in": "header",
+                        "required": true
+                    }
+                ],
                 "responses": {
                     "200": {
                         "description": "OK",

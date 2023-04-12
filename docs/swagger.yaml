@@ -393,6 +393,12 @@ paths:
       consumes:
       - application/json
       description: List all CardFidelities
+      parameters:
+      - description: Authorization
+        in: header
+        name: Authorization
+        required: true
+        type: string
       responses:
         "200":
           description: OK
@@ -406,6 +412,8 @@ paths:
           description: Not Found
           schema:
             $ref: '#/definitions/github_com_LuisMarchio03_acim-backend_handler_cardFidelity.ErrorResponse'
+      security:
+      - ApiKeyAuth: []
       summary: List CardFidelities
       tags:
       - CardFidelity
@@ -415,6 +423,11 @@ paths:
       - application/json
       description: Delete a cardFidelity
       parameters:
+      - description: Authorization
+        in: header
+        name: Authorization
+        required: true
+        type: string
       - description: CardFidelity identification
         in: query
         name: id
@@ -433,6 +446,8 @@ paths:
           description: Not Found
           schema:
             $ref: '#/definitions/github_com_LuisMarchio03_acim-backend_handler_cardFidelity.ErrorResponse'
+      security:
+      - ApiKeyAuth: []
       summary: Delete CardFidelity
       tags:
       - CardFidelity
@@ -441,6 +456,11 @@ paths:
       - application/json
       description: Show a cardFidelity
       parameters:
+      - description: Authorization
+        in: header
+        name: Authorization
+        required: true
+        type: string
       - description: CardFidelity identification
         in: query
         name: id
@@ -455,6 +475,8 @@ paths:
           description: Not Found
           schema:
             $ref: '#/definitions/github_com_LuisMarchio03_acim-backend_handler_cardFidelity.ErrorResponse'
+      security:
+      - ApiKeyAuth: []
       summary: Show CardFidelity
       tags:
       - CardFidelity
@@ -463,6 +485,11 @@ paths:
       - application/json
       description: Create a new cardFidelity
       parameters:
+      - description: Authorization
+        in: header
+        name: Authorization
+        required: true
+        type: string
       - description: Request body
         in: body
         name: request
@@ -482,6 +509,8 @@ paths:
           description: Internal Server Error
           schema:
             $ref: '#/definitions/github_com_LuisMarchio03_acim-backend_handler_cardFidelity.ErrorResponse'
+      security:
+      - ApiKeyAuth: []
       summary: Create CardFidelity
       tags:
       - CardFidelity
@@ -490,6 +519,11 @@ paths:
       - application/json
       description: Update a new cardFidelity
       parameters:
+      - description: Authorization
+        in: header
+        name: Authorization
+        required: true
+        type: string
       - description: CardFidelity identification
         in: query
         name: id
@@ -518,6 +552,8 @@ paths:
           description: Internal Server Error
           schema:
             $ref: '#/definitions/github_com_LuisMarchio03_acim-backend_handler_cardFidelity.ErrorResponse'
+      security:
+      - ApiKeyAuth: []
       summary: Update CardFidelity
       tags:
       - CardFidelity
@@ -526,6 +562,12 @@ paths:
       consumes:
       - application/json
       description: List all Companies
+      parameters:
+      - description: Authorization
+        in: header
+        name: Authorization
+        required: true
+        type: string
       responses:
         "200":
           description: OK
@@ -539,6 +581,8 @@ paths:
           description: Not Found
           schema:
             $ref: '#/definitions/github_com_LuisMarchio03_acim-backend_handler_company.ErrorResponse'
+      security:
+      - ApiKeyAuth: []
       summary: List Companies
       tags:
       - Company
@@ -548,6 +592,11 @@ paths:
       - application/json
       description: Delete a company
       parameters:
+      - description: Authorization
+        in: header
+        name: Authorization
+        required: true
+        type: string
       - description: Company identification
         in: query
         name: id
@@ -566,6 +615,8 @@ paths:
           description: Not Found
           schema:
             $ref: '#/definitions/github_com_LuisMarchio03_acim-backend_handler_company.ErrorResponse'
+      security:
+      - ApiKeyAuth: []
       summary: Delete Company
       tags:
       - Company
@@ -574,6 +625,11 @@ paths:
       - application/json
       description: Show a company
       parameters:
+      - description: Authorization
+        in: header
+        name: Authorization
+        required: true
+        type: string
       - description: Company identification
         in: query
         name: id
@@ -588,6 +644,8 @@ paths:
           description: Not Found
           schema:
             $ref: '#/definitions/github_com_LuisMarchio03_acim-backend_handler_company.ErrorResponse'
+      security:
+      - ApiKeyAuth: []
       summary: Show Company
       tags:
       - Company
@@ -596,6 +654,11 @@ paths:
       - application/json
       description: Create a new company
       parameters:
+      - description: Authorization
+        in: header
+        name: Authorization
+        required: true
+        type: string
       - description: Request body
         in: body
         name: request
@@ -615,6 +678,8 @@ paths:
           description: Internal Server Error
           schema:
             $ref: '#/definitions/github_com_LuisMarchio03_acim-backend_handler_company.ErrorResponse'
+      security:
+      - ApiKeyAuth: []
       summary: Create Company
       tags:
       - Company
@@ -623,6 +688,11 @@ paths:
       - application/json
       description: Update a new company
       parameters:
+      - description: Authorization
+        in: header
+        name: Authorization
+        required: true
+        type: string
       - description: Company identification
         in: query
         name: id
@@ -651,6 +721,8 @@ paths:
           description: Internal Server Error
           schema:
             $ref: '#/definitions/github_com_LuisMarchio03_acim-backend_handler_company.ErrorResponse'
+      security:
+      - ApiKeyAuth: []
       summary: Update Company
       tags:
       - Company
@@ -688,6 +760,11 @@ paths:
       - application/json
       description: Delete a point
       parameters:
+      - description: Authorization
+        in: header
+        name: Authorization
+        required: true
+        type: string
       - description: Point identification
         in: query
         name: id
@@ -706,6 +783,8 @@ paths:
           description: Not Found
           schema:
             $ref: '#/definitions/github_com_LuisMarchio03_acim-backend_handler_point.ErrorResponse'
+      security:
+      - ApiKeyAuth: []
       summary: Delete Point
       tags:
       - Point
@@ -714,6 +793,11 @@ paths:
       - application/json
       description: Show a point
       parameters:
+      - description: Authorization
+        in: header
+        name: Authorization
+        required: true
+        type: string
       - description: Point identification
         in: query
         name: id
@@ -728,6 +812,8 @@ paths:
           description: Not Found
           schema:
             $ref: '#/definitions/github_com_LuisMarchio03_acim-backend_handler_point.ErrorResponse'
+      security:
+      - ApiKeyAuth: []
       summary: Show Point
       tags:
       - Point
@@ -736,6 +822,11 @@ paths:
       - application/json
       description: Create a new point
       parameters:
+      - description: Authorization
+        in: header
+        name: Authorization
+        required: true
+        type: string
       - description: Request body
         in: body
         name: request
@@ -755,6 +846,8 @@ paths:
           description: Internal Server Error
           schema:
             $ref: '#/definitions/github_com_LuisMarchio03_acim-backend_handler_point.ErrorResponse'
+      security:
+      - ApiKeyAuth: []
       summary: Create Point
       tags:
       - Point
@@ -763,6 +856,11 @@ paths:
       - application/json
       description: Update a new point
       parameters:
+      - description: Authorization
+        in: header
+        name: Authorization
+        required: true
+        type: string
       - description: Point identification
         in: query
         name: id
@@ -791,6 +889,8 @@ paths:
           description: Internal Server Error
           schema:
             $ref: '#/definitions/github_com_LuisMarchio03_acim-backend_handler_point.ErrorResponse'
+      security:
+      - ApiKeyAuth: []
       summary: Update Point
       tags:
       - Point
@@ -799,6 +899,12 @@ paths:
       consumes:
       - application/json
       description: List all Points
+      parameters:
+      - description: Authorization
+        in: header
+        name: Authorization
+        required: true
+        type: string
       responses:
         "200":
           description: OK
@@ -812,6 +918,8 @@ paths:
           description: Not Found
           schema:
             $ref: '#/definitions/github_com_LuisMarchio03_acim-backend_handler_point.ErrorResponse'
+      security:
+      - ApiKeyAuth: []
       summary: List Points
       tags:
       - Point
@@ -821,6 +929,11 @@ paths:
       - application/json
       description: Delete a user
       parameters:
+      - description: Authorization
+        in: header
+        name: Authorization
+        required: true
+        type: string
       - description: User identification
         in: query
         name: id
@@ -839,6 +952,8 @@ paths:
           description: Not Found
           schema:
             $ref: '#/definitions/github_com_LuisMarchio03_acim-backend_handler_user.ErrorResponse'
+      security:
+      - ApiKeyAuth: []
       summary: Delete User
       tags:
       - User
@@ -847,6 +962,11 @@ paths:
       - application/json
       description: Show a user
       parameters:
+      - description: Authorization
+        in: header
+        name: Authorization
+        required: true
+        type: string
       - description: User identification
         in: query
         name: id
@@ -861,6 +981,8 @@ paths:
           description: Not Found
           schema:
             $ref: '#/definitions/github_com_LuisMarchio03_acim-backend_handler_user.ErrorResponse'
+      security:
+      - ApiKeyAuth: []
       summary: Show User
       tags:
       - User
@@ -903,6 +1025,11 @@ paths:
       - application/json
       description: Update a new user
       parameters:
+      - description: Authorization
+        in: header
+        name: Authorization
+        required: true
+        type: string
       - description: User identification
         in: query
         name: id
@@ -931,6 +1058,8 @@ paths:
           description: Internal Server Error
           schema:
             $ref: '#/definitions/github_com_LuisMarchio03_acim-backend_handler_user.ErrorResponse'
+      security:
+      - ApiKeyAuth: []
       summary: Update User
       tags:
       - User
@@ -939,6 +1068,12 @@ paths:
       consumes:
       - application/json
       description: List all Users
+      parameters:
+      - description: Authorization
+        in: header
+        name: Authorization
+        required: true
+        type: string
       responses:
         "200":
           description: OK
@@ -952,6 +1087,8 @@ paths:
           description: Not Found
           schema:
             $ref: '#/definitions/github_com_LuisMarchio03_acim-backend_handler_user.ErrorResponse'
+      security:
+      - ApiKeyAuth: []
       summary: List Users
       tags:
       - User
