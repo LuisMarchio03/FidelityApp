@@ -66,3 +66,20 @@ func (r *UpdateUserRequest) Validate() error {
 	// If none of the fields were provided, return false
 	return fmt.Errorf("at least one valid field must be provided")
 }
+
+// Login User
+
+type LoginUserRequest struct {
+	Email    string `json:"email"`
+	Password string `json:"password"`
+}
+
+func (r *LoginUserRequest) Validate() error {
+	if r.Email == "" {
+		return errParamsIsRequired("email", "string")
+	}
+	if r.Password == "" {
+		return errParamsIsRequired("password", "string")
+	}
+	return nil
+}
