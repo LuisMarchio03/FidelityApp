@@ -15,6 +15,8 @@ import (
 // @Tags Company
 // @Accept json
 // @Producer json
+// @Security ApiKeyAuth
+// @param Authorization header string true "Authorization"
 // @Param id query string true "Company identification"
 // @Success 200 {object} DeleteCompanyResponse
 // @Failure 400 {object} ErrorResponse
