@@ -3,6 +3,8 @@ package schemas
 import (
 	"time"
 
+	jwt "github.com/golang-jwt/jwt/v5"
+	"golang.org/x/crypto/bcrypt"
 	"gorm.io/gorm"
 )
 
@@ -29,4 +31,32 @@ type UserResponse struct {
 	Password  string    `json:"password"`
 	CompanyId uint      `json:"companyId"`
 	Type      string    `json:"type"`
+}
+
+// HashPassword
+func HashPassword(password string) (string, error) {
+	hash, err := bcrypt.GenerateFromPassword([]byte(password), bcrypt.DefaultCost)
+	if err != nil {
+		return "", err
+	}
+	return string(hash), nil
+}
+
+// ComparePassword
+func (u *User) ComparePassword(password string) error {
+	if err := bcrypt.CompareHashAndPassword([]byte(u.Password), []byte(password)); err != nil {
+		return err
+	}
+	return nil
+}
+
+// GenerateToken
+func (u *User) GenerateToken() (string, error) {
+	token, err := jwt.NewWithClaims(jwt.SigningMethodHS256, jwt.MapClaims{
+		"id": u.ID,
+	}).SignedString([]byte("secret"))
+	if err != nil {
+		return "", err
+	}
+	return token, nil
 }
