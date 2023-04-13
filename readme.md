@@ -27,6 +27,9 @@ The ACIM Fidelity App is an application that allows the registration of users, c
 - **Password**
 - **CompanyId (optional)**
 - **Type (user / employee)**
+- **Code**
+- **Photo**
+
 
 ## CardFidelity
 
@@ -88,6 +91,8 @@ The ACIM Fidelity App is an application that allows the registration of users, c
 - [x] The user must be able to reset the password.
 
 - [x] The user must be able to update the profile (name, email and password).
+
+- [] The user must be able to update the photo profile.
 
 - [x] The user must not be able to create a new user with an email already registered.
 
