@@ -72,6 +72,7 @@ The ACIM Fidelity App is an application that allows the registration of users, c
 - [x] Reset Password
 - [x] Update Profile
 - [x] Update Password
+- [] Access Control Permissions (middleware)
 
 # Requirements
 
