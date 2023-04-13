@@ -1,5 +1,5 @@
 # Create Builder Image, to compile the source code into an executable
-FROM golang:1.17-alpine as builder
+FROM golang:1.18-alpine as builder
 RUN apk add --no-cache gcc musl-dev
 WORKDIR /app
 COPY go.mod go.sum ./

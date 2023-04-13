@@ -3,8 +3,9 @@ version: '3.8'
 services:
   api:
     build: .
-    image: FidelityApp:latest
+    image: acim-backend:latest
     ports:
       - "8080:8080"
     environment:
       - GIN_MODE=release
+      - JWT_SECRET=secret
