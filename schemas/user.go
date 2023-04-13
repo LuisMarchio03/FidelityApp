@@ -1,6 +1,7 @@
 package schemas
 
 import (
+	"os"
 	"time"
 
 	jwt "github.com/golang-jwt/jwt/v5"
@@ -56,7 +57,7 @@ func (u *User) ComparePassword(password string) error {
 func (u *User) GenerateToken() (string, error) {
 	token, err := jwt.NewWithClaims(jwt.SigningMethodHS256, jwt.MapClaims{
 		"id": u.ID,
-	}).SignedString([]byte("secret"))
+	}).SignedString([]byte(os.Getenv("JWT_SECRET")))
 	if err != nil {
 		return "", err
 	}
