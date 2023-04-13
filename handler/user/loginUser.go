@@ -34,15 +34,15 @@ func LoginUserHandler(ctx *gin.Context) {
 	user := schemas.User{}
 
 	if err := db.Where("email = ?", request.Email).First(&user).Error; err != nil {
-		logger.Errorf("user not found")
-		sendError(ctx, http.StatusBadRequest, "user not found")
+		logger.Errorf("invalid credentials")
+		sendError(ctx, http.StatusBadRequest, "invalid credentials")
 		return
 	}
 
 	// Compare password
 	if err := user.ComparePassword(request.Password); err != nil {
-		logger.Errorf("invalid password")
-		sendError(ctx, http.StatusBadRequest, "invalid password")
+		logger.Errorf("invalid credentials")
+		sendError(ctx, http.StatusBadRequest, "invalid credentials")
 		return
 	}
 
