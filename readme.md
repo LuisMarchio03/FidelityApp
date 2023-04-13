@@ -63,12 +63,12 @@ The ACIM Fidelity App is an application that allows the registration of users, c
 - [x] Delete Company
 - [x] Delete User
 - [x] Delete CardFidelity
-- [] Login
-- [] Logout
-- [] Forgot Password
-- [] Reset Password
-- [] Update Profile
-- [] Update Password
+- [x] Login
+- [x] Logout
+- [x] Forgot Password
+- [x] Reset Password
+- [x] Update Profile
+- [x] Update Password
 
 # Requirements
 
@@ -83,11 +83,11 @@ The ACIM Fidelity App is an application that allows the registration of users, c
 
 <!-- - [] The user must be able to logout. -->
 
-- [] The user must be able to recover the password using the email.
+- [x] The user must be able to recover the password using the email.
 
-- [] The user must be able to reset the password.
+- [x] The user must be able to reset the password.
 
-- [] The user must be able to update the profile (name, email and password).
+- [x] The user must be able to update the profile (name, email and password).
 
 - [x] The user must not be able to create a new user with an email already registered.
 
