@@ -185,6 +185,32 @@ definitions:
       token:
         type: string
     type: object
+  handler.RecoveryPasswordRequest:
+    properties:
+      code:
+        type: string
+      new_password:
+        type: string
+      password:
+        type: string
+      password_confirm:
+        type: string
+    type: object
+  handler.RecoveryPasswordResponse:
+    properties:
+      message:
+        type: string
+    type: object
+  handler.SendCodeForMailRequest:
+    properties:
+      email:
+        type: string
+    type: object
+  handler.SendCodeForMailResponse:
+    properties:
+      message:
+        type: string
+    type: object
   handler.ShowCardFidelityResponse:
     properties:
       data:
@@ -364,6 +390,8 @@ definitions:
     properties:
       address:
         type: string
+      code:
+        type: string
       companyId:
         type: integer
       createdAt:
@@ -388,6 +416,66 @@ definitions:
 info:
   contact: {}
 paths:
+  /auth/recovery-password:
+    post:
+      consumes:
+      - application/json
+      description: Recovery Password
+      parameters:
+      - description: Request body
+        in: body
+        name: request
+        required: true
+        schema:
+          $ref: '#/definitions/handler.RecoveryPasswordRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/handler.RecoveryPasswordResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/github_com_LuisMarchio03_acim-backend_handler_user.ErrorResponse'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/github_com_LuisMarchio03_acim-backend_handler_user.ErrorResponse'
+      summary: Recovery Password
+      tags:
+      - Auth
+  /auth/send-code-for-mail:
+    post:
+      consumes:
+      - application/json
+      description: Send Code For Mail
+      parameters:
+      - description: Request body
+        in: body
+        name: request
+        required: true
+        schema:
+          $ref: '#/definitions/handler.SendCodeForMailRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/handler.SendCodeForMailResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/github_com_LuisMarchio03_acim-backend_handler_user.ErrorResponse'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/github_com_LuisMarchio03_acim-backend_handler_user.ErrorResponse'
+      summary: Send Code For Mail
+      tags:
+      - Auth
   /cardFidelities:
     get:
       consumes:
@@ -991,11 +1079,6 @@ paths:
       - application/json
       description: Create a new user
       parameters:
-      - description: Authorization
-        in: header
-        name: Authorization
-        required: true
-        type: string
       - description: Request body
         in: body
         name: request
@@ -1015,8 +1098,6 @@ paths:
           description: Internal Server Error
           schema:
             $ref: '#/definitions/github_com_LuisMarchio03_acim-backend_handler_user.ErrorResponse'
-      security:
-      - ApiKeyAuth: []
       summary: Create User
       tags:
       - User
