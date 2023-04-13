@@ -58,3 +58,11 @@ type LoginUserResponse struct {
 	Message string `json:"message"`
 	Token   string `json:"token"`
 }
+
+type SendCodeForMailResponse struct {
+	Message string `json:"message"`
+}
+
+type RecoveryPasswordResponse struct {
+	Message string `json:"message"`
+}

@@ -17,6 +17,7 @@ type User struct {
 	Password  string
 	CompanyId uint
 	Type      string
+	Code      string
 }
 
 type UserResponse struct {
@@ -31,6 +32,7 @@ type UserResponse struct {
 	Password  string    `json:"password"`
 	CompanyId uint      `json:"companyId"`
 	Type      string    `json:"type"`
+	Code      string    `json:"code"`
 }
 
 // HashPassword

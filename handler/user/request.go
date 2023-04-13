@@ -83,3 +83,32 @@ func (r *LoginUserRequest) Validate() error {
 	}
 	return nil
 }
+
+// Send code for mail
+
+type SendCodeForMailRequest struct {
+	Email string `json:"email"`
+}
+
+func (r *SendCodeForMailRequest) Validate() error {
+	if r.Email == "" {
+		return errParamsIsRequired("email", "string")
+	}
+	return nil
+}
+
+// Recovery password
+
+type RecoveryPasswordRequest struct {
+	Code            string `json:"code"`
+	Password        string `json:"password"`
+	NewPassword     string `json:"new_password"`
+	PasswordConfirm string `json:"password_confirm"`
+}
+
+func (r *RecoveryPasswordRequest) Validate() error {
+	if r.Code == "" {
+		return errParamsIsRequired("code", "string")
+	}
+	return nil
+}

@@ -46,7 +46,7 @@ func InitializeRoutes(r *gin.Engine) {
 
 	// User
 	{
-		v1.POST("/user", middleware.AuthMiddleware(), func(ctx *gin.Context) {
+		v1.POST("/user", func(ctx *gin.Context) {
 			userHandler.CreateUserHandler(ctx)
 		})
 		v1.GET("/users", middleware.AuthMiddleware(), func(ctx *gin.Context) {
@@ -63,6 +63,12 @@ func InitializeRoutes(r *gin.Engine) {
 		})
 		v1.POST("/login", func(ctx *gin.Context) {
 			userHandler.LoginUserHandler(ctx)
+		})
+		v1.POST("/auth/send-code-for-mail", func(ctx *gin.Context) {
+			userHandler.SendCodeForMailHandler(ctx)
+		})
+		v1.POST("/auth/recovery-password", func(ctx *gin.Context) {
+			userHandler.RecoveryPasswordHandler(ctx)
 		})
 	}
 
