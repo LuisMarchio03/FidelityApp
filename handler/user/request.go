@@ -40,8 +40,8 @@ func (r *CreateUserRequest) Validate() error {
 	if r.Type == "" {
 		return errParamsIsRequired("type", "string")
 	}
-	if r.Type != "user" && r.Type != "employee" {
-		return fmt.Errorf("type must be user or employee")
+	if r.Type != "user" && r.Type != "employee" && r.Type != "admin" {
+		return fmt.Errorf("type must be user, employee or admin")
 	}
 	return nil
 }

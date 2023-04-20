@@ -53,9 +53,9 @@ The ACIM Fidelity App is an application that allows the registration of users, c
 - [x] Create CardFidelity
 - [x] List Companies
 - [x] List Users
-- [] List Users by Company
-- [] List Users by Type
-- [] List Users by Company and Type
+<!-- - [] List Users by Company -->
+<!-- - [] List Users by Type -->
+<!-- - [] List Users by Company and Type -->
 - [x] List CardFidelity
 - [x] Show Company
 - [x] Show User
@@ -72,14 +72,14 @@ The ACIM Fidelity App is an application that allows the registration of users, c
 - [x] Reset Password
 - [x] Update Profile
 - [x] Update Password
-- [] Access Control Permissions (middleware)
+<!-- - [] Access Control Permissions (middleware) -->
 
 # Requirements
 
 
 ## Schema user
 
-- [] The user must be able to register in the application with name, email, password and type (user / employee / admin).
+- [x] The user must be able to register in the application with name, email, password and type (user / employee / admin).
 
 - [x] The user must be able to update name, email and password.
 
@@ -93,7 +93,7 @@ The ACIM Fidelity App is an application that allows the registration of users, c
 
 - [x] The user must be able to update the profile (name, email and password).
 
-- [] The user must be able to update the photo profile.
+- [x] The user must be able to update the photo profile.
 
 - [x] The user must not be able to create a new user with an email already registered.
 

@@ -9,21 +9,14 @@ func SendEmail(to string, code string) error {
 	// SMTP server configuration
 	smtpServer := "smtp.gmail.com"
 	smtpPort := "587"
-	senderEmail := "your-email@gmail.com"
+	senderEmail := to
 	senderPassword := "your-email-password"
 
 	// Recipient email address
 	recipientEmail := "recipient-email@example.com"
 
-	// Message content
-	subject := "Test email"
-	body := "This is a test email sent from Golang."
-
 	// Compose the email message
-	message := "From: " + senderEmail + "\n" +
-		"To: " + recipientEmail + "\n" +
-		"Subject: " + subject + "\n\n" +
-		body
+	message := "Código: " + code
 
 	// Authentication
 	auth := smtp.PlainAuth("", senderEmail, senderPassword, smtpServer)
