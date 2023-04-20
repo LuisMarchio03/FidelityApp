@@ -1,0 +1,38 @@
+# GET /users
+GET http://localhost:3333/users
+
+# POST /users
+POST http://localhost:3333/user
+Content-Type: application/json
+
+{
+  "name": "User Name",
+  "address": "User Address",
+  "phone": "1234567890",
+  "email": "user@example.com",
+  "password": "password123",
+  "companyId": 1,
+  "type": "user_type",
+  "code": null,
+}
+
+# GET /users/:id
+GET http://localhost:3333/user/:id
+
+# PUT /users/:id
+PUT http://localhost:3333/user/:id
+Content-Type: application/json
+
+{
+  "name": "Updated User Name",
+  "address": "Updated User Address",
+  "phone": "1234567890",
+  "email": "updateduser@example.com",
+  "password": "updatedpassword123",
+  "companyId": 2,
+  "type": "updated_user_type",
+  "code": null,
+}
+
+# DELETE /users/:id
+DELETE http://localhost:3333/user/:id

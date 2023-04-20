@@ -1,0 +1,26 @@
+# GET /points
+GET http://localhost:3333/points
+
+# POST /points
+POST http://localhost:3333/point
+Content-Type: application/json
+
+{
+  "cardFidelityId": 1,
+  "point": 100
+}
+
+# GET /points/:id
+GET http://localhost:3333/point/:id
+
+# PUT /points/:id
+PUT http://localhost:3333/point/:id
+Content-Type: application/json
+
+{
+  "cardFidelityId": 2,
+  "point": 200
+}
+
+# DELETE /points/:id
+DELETE http://localhost:3333/point/:id

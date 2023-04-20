@@ -1,0 +1,30 @@
+# GET /cardFidelity
+GET http://localhost:3333/cardFidelities
+
+# POST /cardFidelity
+POST http://localhost:3333/cardFidelity
+Content-Type: application/json
+
+{
+  "userId": 1,
+  "companyId": 1,
+  "totalPoints": 0,
+  "finished": false
+}
+
+# GET /cardFidelity/:id
+GET http://localhost:3333/cardFidelity/:id
+
+# PUT /cardFidelity/:id
+PUT http://localhost:3333/cardFidelity/:id
+Content-Type: application/json
+
+{
+  "userId": 2,
+  "companyId": 1,
+  "totalPoints": 100,
+  "finished": true
+}
+
+# DELETE /cardFidelity/:id
+DELETE http://localhost:3333/cardFidelity/:id

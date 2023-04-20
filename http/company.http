@@ -1,0 +1,38 @@
+# GET /companies
+GET http://localhost:3333/companies
+
+# POST /companies
+POST http://localhost:3333/company
+Content-Type: application/json
+
+{
+  "name": "Company Name",
+  "cnpj": "12345678901234",
+  "address": "Company Address",
+  "addressNumber": "123",
+  "addressComplement": "Company Address Complement",
+  "addressCity": "Company City",
+  "addressState": "Company State",
+  "addressZipCode": "12345-678",
+}
+
+# GET /companies/:id
+GET http://localhost:3333/company/:id
+
+# PUT /companies/:id
+PUT http://localhost:3333/company/:id
+Content-Type: application/json
+
+{
+  "name": "Updated Company Name",
+  "cnpj": "12345678901234",
+  "address": "Updated Company Address",
+  "addressNumber": "123",
+  "addressComplement": "Updated Company Address Complement",
+  "addressCity": "Updated Company City",
+  "addressState": "Updated Company State",
+  "addressZipCode": "12345-678",
+}
+
+# DELETE /companies/:id
+DELETE http://localhost:3333/company/:id
