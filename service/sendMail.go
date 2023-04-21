@@ -2,32 +2,32 @@ package service
 
 import (
 	"fmt"
+	"log"
 	"net/smtp"
 )
 
 func SendEmail(to string, code string) error {
-	// SMTP server configuration
-	smtpServer := "smtp.gmail.com"
-	smtpPort := "587"
-	senderEmail := to
-	senderPassword := "your-email-password"
+	from := "john.doe@example.com"
 
-	// Recipient email address
-	recipientEmail := "recipient-email@example.com"
+	user := "9c1d45eaf7af5b"
+	password := "ad62926fa75d0f"
 
-	// Compose the email message
-	message := "Código: " + code
+	addr := "smtp.mailtrap.io:2525"
+	host := "smtp.mailtrap.io"
 
-	// Authentication
-	auth := smtp.PlainAuth("", senderEmail, senderPassword, smtpServer)
+	msg := []byte("Code: " + code + " to verify your email address")
 
-	// Sending email
-	err := smtp.SendMail(smtpServer+":"+smtpPort, auth, senderEmail, []string{recipientEmail}, []byte(message))
+	auth := smtp.PlainAuth("", user, password, host)
+
+	arrTo := []string{to}
+	err := smtp.SendMail(addr, auth, from, arrTo, msg)
+
 	if err != nil {
-		fmt.Println("Failed to send email:", err)
-		return err
+		log.Fatal(err)
 	}
-	fmt.Println("Email sent successfully!")
+
+	fmt.Println("Email sent successfully")
+	fmt.Println("Code: " + code)
 
 	return nil
 }
